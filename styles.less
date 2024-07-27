@@ -1,0 +1,361 @@
+html, body, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font-family: 'Exo 2', sans-serif;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+.about-first{
+  a {
+    color: #ffff!important;
+  }
+}
+img {
+  border: none;
+}
+
+fieldset {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+
+  img {
+    border: none;
+  }
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+}
+
+input[type="email"] {
+  -webkit-appearance: none;
+}
+
+input[type="tel"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+  overflow: auto;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before {
+    box-sizing: inherit;
+  }
+
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h4 {
+  text-align: center;
+  font-size: 2em;
+  margin: 40px 0;
+  color: #4adc63;
+}
+
+p {
+  line-height: 30px;
+}
+
+.first {
+  height: 100vh;
+  @media (max-width: 800px) {
+    padding: 0;
+    height: 100vh;
+  }
+}
+
+section {
+  position: relative;
+  @media (max-width: 655px) {
+    height: auto;
+  }
+}
+
+.title {
+  font-size: 2em;
+  margin: 40px 0;
+  letter-spacing: 2px;
+    color: #4adc63
+}
+
+.about-ex {
+
+}
+
+.ex-image {
+  width: 600px;
+  display: block;
+  object-fit: contain;
+  margin: 50px 0;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+main {
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+  padding: 30px 0 30px 0;
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background: no-repeat center center;
+  background-image: url('sunset.jpg');
+  background-size: cover;
+  background-color: rgba(7, 49, 52, .8);
+  @media (max-width: 1033px) {
+    padding: 20px 0;
+  }
+  .desc-ul {
+    margin-left: 40px;
+    @media (max-width: 500px) {
+      margin-left: 20px;
+    }
+  }
+.hide_on_mob{
+  @media (max-width: 450px) {
+    opacity: 0;
+  }
+}
+  .show_on_mob{
+    display: none;
+    p{
+      color: black;
+    }
+    @media (max-width: 450px) {
+      display: block;
+    }
+  }
+  .content {
+    margin: 0 auto;
+    max-width: 1200px;
+    @media (max-width: 1220px) {
+      max-width: 1000px;
+    }
+    @media (max-width: 1033px) {
+      max-width: 800px;
+    }
+    @media (max-width: 850px) {
+      max-width: 600px;
+    }
+    @media (max-width: 625px) {
+      max-width: 500px;
+    }
+    @media (max-width: 500px) {
+      max-width: 400px;
+    }
+    @media (max-width: 450px) {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+
+    h1 {
+
+      font-size: 5em;
+      letter-spacing: 5px;
+      color: #ffff;
+      padding-top: 50px;
+      @media (max-width: 850px) {
+        font-size: 3em;
+      }
+    }
+
+    .under-main-name {
+      position: relative;
+      font-size: 1em;
+      letter-spacing: 2px;
+      color: #ffff;
+      margin-top: 10px;
+      padding-left: 7px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .about-txt {
+      color: black;
+
+      p {
+        font-size: 1.2em;
+        padding: 0;
+        text-transform: none;
+      }
+    }
+
+    .flex-block {
+      display: flex;
+      width: 100%;
+      margin-top: 20px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .name-title{
+        color: #4adc63;
+        font-size: 1.3em;
+        font-family: "Exo 2";
+        letter-spacing: 3px;
+      }
+      @media (max-width: 500px) {
+        padding: 0;
+      }
+      .txt-id {
+        padding-top: 20px;
+
+        p {
+          letter-spacing: 2px;
+
+          span {
+            color: #4adc63;
+            font-weight: bold;
+            font-family: sans-serif;
+          }
+        }
+      }
+      @media (max-width: 650px) {
+        max-width: 550px;
+        align-items: center;
+      }
+
+      .avatar {
+        position: relative;
+        height: auto;
+        width: 320px;
+        z-index: 1;
+        right: 0;
+        bottom: 0;
+        @media (max-width: 850px) {
+          width: 200px;
+        }
+
+        img {
+          display: block;
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          border-radius: 13px;
+          position: relative;
+          left: -20px;
+        }
+
+
+      }
+    }
+  }
+
+
+  &:after {
+    background-color: rgba(7, 49, 52, .4);
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    //border-radius: 48px;
+    z-index: -1;
+  }
+}
+
+ul {
+  li {
+    margin: 20px 0;
+  }
+}
+
+.sub-title {
+  margin: 10px 0;
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+  font-family: sans-serif;
+}
+
+.about-contact {
+
+  font-size: 18px;
+
+  .el {
+    display: flex;
+    margin: 20px 0;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:hover {
+      a {
+        color: #b9cecf;
+      }
+    }
+
+    a {
+      color: #000000;
+      text-transform: initial;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    span {
+      font-family: sans-serif;
+      color: #4adc63;
+      display: block;
+      margin-right: 10px;
+      letter-spacing: 2px;
+      font-weight: bold;
+
+      i {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
