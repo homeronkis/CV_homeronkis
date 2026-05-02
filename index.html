@@ -2,260 +2,300 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Igor Kim — Senior Frontend Engineer (React / TypeScript). Real-time chat, FinTech, crypto, AI-driven tooling.">
-  <script>
-    function preloader() {
-      var heavyImage = new Image();
-      heavyImage.src = "sunset.jpg";
-    }
-  </script>
+  <meta name="description" content="Igor Kim — Senior Frontend Engineer. React / TypeScript. Real-time chat at scale, FinTech, crypto, AI-driven tooling.">
+  <meta name="theme-color" content="#09090b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,500;1,100;1,300&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet/less" type="text/css" href="styles.less"/>
   <script src="//cdn.jsdelivr.net/npm/less@4.1.1"></script>
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <title>Igor Kim — Senior Frontend Engineer</title>
 </head>
-<body onLoad="javascript:preloader()">
-<div class="bg-image"></div>
+<body>
 
 <main>
-  <div class="content">
-    <div class="first">
-      <div class="txt">
-        <h1>Igor Kim</h1>
-        <p class="under-main-name">Senior Frontend Engineer · React / TypeScript</p>
-      </div>
 
-      <div class="flex-block">
-        <div class="avatar">
-          <img src="avaFinal.png" alt="Igor Kim">
-        </div>
-      </div>
+  <header class="hero">
+    <h1>Igor Kim</h1>
+    <p class="role">Senior Frontend Engineer · React / TypeScript</p>
+    <div class="skim">
+      <strong>7+ years.</strong> Real-time chat at scale (Matrix SDK, virtualized lists for 10k+ messages),
+      crypto-exchange UIs, FinTech dashboards, Electron desktop apps.
+      Recently exploring AI-driven personal tooling.
+    </div>
+    <div class="contacts">
+      <span>📍 Bishkek · UTC+6 · remote ±3h MSK</span>
+      <a href="mailto:homeronkis@gmail.com">homeronkis@gmail.com</a>
+      <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/">LinkedIn</a>
+    </div>
+  </header>
 
-      <div class="about-contact about-first">
-        <h3 class="title">Contacts</h3>
-        <div class="el"><span><i class="fas fa-map-marked-alt"></i></span>
-          <a href="https://www.google.com/maps/place/Bishkek/">Bishkek, Kyrgyzstan · UTC+6 (remote, ±3h MSK)</a>
-        </div>
-        <div class="el"><span><i class="fas fa-envelope-open"></i></span>
-          <a href="mailto:homeronkis@gmail.com">homeronkis@gmail.com</a>
-        </div>
-        <div class="el"><span><i class="fab fa-linkedin"></i></span>
-          <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/">linkedin.com/in/igor-kim</a>
-        </div>
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      I build the parts users feel — input latency, perceived speed,
+      the way state moves between screens. I don't ship "looks finished but breaks
+      under real data" UIs.
+    </p>
+    <p>
+      Code I leave behind is small, typed, tested where it matters, easy for the next
+      person to read. I pick state-management tools by the shape of the data, not the
+      framework du jour. I profile before I optimize, and I write down the why before
+      the what.
+    </p>
+    <p>
+      Currently building a daily-briefing PWA on React 18 / Vite / FastAPI with a
+      pluggable apps architecture (manifest-declared surfaces, MCP-callable tools, hot
+      mount/unmount, schema-versioned permissions). Useful as a portfolio of how I
+      think about systems beyond a single screen.
+    </p>
+  </section>
+
+  <section>
+    <h2>What I do best</h2>
+    <div class="signatures">
+      <div class="item">
+        <div class="label">Real-time chat & messaging</div>
+        <div class="body">Matrix SDK, WebSockets, custom virtualization for thousand-message threads, encryption pipelines, image/file attachments with preview, typing indicators, read-receipt batching.</div>
+      </div>
+      <div class="item">
+        <div class="label">Crypto & FinTech UIs</div>
+        <div class="body">Exchange forms, order histories, partner pages with auth, wallet integrations, USDT payments, multi-step KYC flows that don't lose users mid-transaction.</div>
+      </div>
+      <div class="item">
+        <div class="label">Performance work</div>
+        <div class="body">Profiling React renders, bundle splitting, virtualized lists (react-window / react-virtualized), intersection-observer-driven lazy loading, network-aware caching.</div>
+      </div>
+      <div class="item">
+        <div class="label">State at scale</div>
+        <div class="body">Redux Toolkit, MobX-State-Tree, Zustand, TanStack Query. Picking the right tool for the shape of the data, not the framework of the year.</div>
+      </div>
+      <div class="item">
+        <div class="label">Cross-platform clients</div>
+        <div class="body">Electron desktop apps with multi-window flows, IPC, native menus, system tray, file-system integration.</div>
       </div>
     </div>
+  </section>
 
-    <section>
-      <div class="about-txt">
-        <h3 class="title">About</h3>
-        <p>
-          Senior frontend engineer with 7+ years building real-time, performance-critical interfaces:
-          chat at scale (Matrix SDK, virtualized lists for 10k+ messages), crypto-exchange UIs,
-          fintech dashboards, Electron desktop apps. React / TypeScript today; deep history in Vue/Nuxt.
-        </p>
-        <p>
-          I care about the parts users feel — input latency, perceived speed, the way state moves between
-          screens. I don't ship "looks finished but breaks under real data" UIs. Code I leave behind
-          is small, typed, tested where it matters, and easy for the next person to read.
-        </p>
-        <p>
-          Currently exploring AI-driven personal tooling — built a daily morning briefing PWA on
-          React 18 / Vite / FastAPI that pulls jobs and news through Claude-powered scoring pipelines,
-          with a pluggable apps architecture (manifest-declared surfaces, MCP-callable tools, hot
-          mount/unmount). Useful as a portfolio of how I think about systems beyond a single screen.
-        </p>
-      </div>
+  <section>
+    <h2>Experience</h2>
+    <div class="experience">
 
-      <div class="about-ex">
-        <h3 class="title">What I do best</h3>
-        <ul style="list-style: disc;" class="desc-ul">
-          <li><strong>Real-time chat & messaging.</strong> Matrix SDK, WebSockets, custom virtualization for thread lists with thousands of messages, encryption pipelines, image/file attachments with preview, typing indicators.</li>
-          <li><strong>Crypto / FinTech UIs.</strong> Exchange forms, order histories, partner pages with auth flows, wallet interactions, USDT/crypto payment integrations.</li>
-          <li><strong>Performance work.</strong> Profiling React renders, bundle splitting, virtualized lists, intersection-observer-driven lazy loading, network-aware caching strategies.</li>
-          <li><strong>State at scale.</strong> Redux Toolkit, MobX-State-Tree, Zustand. Picking the right tool for the shape of the data, not the framework du jour.</li>
-          <li><strong>Cross-platform clients.</strong> Electron desktop apps with multi-window flows, IPC, native menus.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h4 class="title">Alandarev — Redux External</h4>
-      <ul>
-        <li><span class="sub-title">Senior Frontend Engineer</span></li>
-        <li>Mar 2022 — Aug 2023 (1 year, 5 months)</li>
-        <li>Remote</li>
-        <li>React, Redux Toolkit, Jest, MongoDB, Electron, virtualized lists</li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Owned the chat module of a Zoom-class corporate communications client. Designed it for the cases real chat hits: long histories, attachments, simultaneous threads.</li>
-        <li>Built the chat with virtualized message lists — opens instantly even on multi-thousand-message threads, scrolls without jank on slow machines.</li>
-        <li>Detached chat windows via Electron IPC: open any thread in a separate window, drag across monitors, keep state in sync.</li>
-        <li>Attachment pipeline: upload with progress, paste-from-clipboard, image preview, file download, retry on flaky network.</li>
-        <li>Read-receipt logic via Intersection Observer — messages mark as read only when actually visible, batched to avoid network thrash.</li>
-        <li>Context menus on attachments and messages, custom keyboard shortcuts, polished hover states.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h4 class="title">Pocketnet</h4>
-      <ul>
-        <li><span class="sub-title">Senior Frontend Engineer (chat lead)</span></li>
-        <li>Sep 2020 — Nov 2021 (1 year, 3 months)</li>
-        <li>Remote</li>
-        <li>VueJS, Matrix JS SDK, Synapse, E2E encryption, Docker</li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Built the entire chat product on top of Matrix protocol — solo for the first six months, then leading a two-engineer team. Used roughly 60% of the Matrix JS SDK surface; the rest of the integration is reusable across any future project.</li>
-        <li>Direct & group chats, contact management with search, user invites, group admin (members, files, images, group rename).</li>
-        <li>Message types: text, images with inline preview, files with download, URL link previews, image gallery view.</li>
-        <li>End-to-end encryption flows wired via Matrix's crypto APIs.</li>
-        <li>Mobile-responsive — same codebase serves desktop, tablet, mobile with adapted interaction patterns.</li>
-        <li><a href="https://pocketnet.app/index">Live product</a></li>
-      </ul>
-      <div>
-        <img src="chatMobile.png" alt="Pocketnet chat (mobile)" class="ex-image"/>
-        <img src="img_1.png" alt="Pocketnet chat" class="ex-image"/>
-      </div>
-    </section>
-
-    <section>
-      <h4 class="title">AZARA</h4>
-      <ul>
-        <li><span class="sub-title">Senior Frontend Engineer</span></li>
-        <li>Jul 2020 — Apr 2021 (9 months)</li>
-        <li>Amsterdam · Remote</li>
-        <li>VueJS, NuxtJS, SCSS, WebSockets</li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Crypto exchange front-end: order forms, order history with filters, exchange-history accordions with rich data, real-time order book via WebSocket connections.</li>
-        <li>Owned the client side end-to-end — landing, demo, transactional flows.</li>
-      </ul>
-      <div>
-        <img src="azara.png" alt="AZARA exchange UI" class="ex-image"/>
-      </div>
-    </section>
-
-    <section>
-      <h4 class="title">BoxExchanger</h4>
-      <ul>
-        <li><span class="sub-title">Senior Frontend Engineer</span></li>
-        <li>Mar 2019 — Aug 2020 (1 year, 5 months)</li>
-        <li>Amsterdam · Remote</li>
-        <li>VueJS, NuxtJS, SCSS</li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Owned the entire client side: <a href="https://www.boxexchanger.net/en">marketing site</a>,
-          <a href="https://example.boxexchanger.net/">trading demo</a>,
-          <a href="https://admin-example.boxexchanger.net/">admin panel</a>.</li>
-        <li>Crypto-exchange forms with multi-step validation, auth & registration flows, partners directory, search & filter UIs.</li>
-        <li>Translated complex finance flows (rate calculations, fee disclosure, KYC steps) into UIs that don't lose users mid-transaction.</li>
-      </ul>
-      <div>
-        <img src="box.png" alt="BoxExchanger UI" class="ex-image"/>
-      </div>
-    </section>
-
-    <section>
-      <h4 class="title">OptDyn / Subutai</h4>
-      <ul>
-        <li><span class="sub-title">Frontend Engineer</span></li>
-        <li>Jun 2018 — Jul 2019 (1 year, 1 month)</li>
-        <li>New Castle, Delaware · Remote</li>
-        <li>Angular 1.5, jQuery, DataTables, Three.js</li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Built and shipped the <a href="https://subutai.io/">Subutai.io</a> marketing site.</li>
-        <li>Implemented core product flows for <a href="https://bazaar.subutai.io/login">Bazaar</a> — refactored legacy code, removed unused libs, modernised dependencies.</li>
-        <li>Browser extension that generated PGP keys for the user's wallet after auth.</li>
-        <li>Container backup & snapshot UIs (think docker-style snapshots, rendered client-side from raw API data).</li>
-        <li>Heavy data-table work — sortable, filterable, resizable, with custom cell renderers.</li>
-        <li>3D globe visualisation via Three.js for the network topology view.</li>
-        <li>First "real company" job — learned how cross-functional product teams work (PMs / backend / QA / design).</li>
-      </ul>
-    </section>
-
-    <section>
-      <h4 class="title">NEO DOC</h4>
-      <ul>
-        <li><span class="sub-title">Frontend Engineer (Tech Lead, MVP)</span></li>
-        <li>Jul 2021 — Oct 2021 (4 months)</li>
-        <li>Bishkek, Kyrgyzstan</li>
-        <li><a href="https://dev.neodoc.io/">Live MVP</a></li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Took the MVP from spec to release as the sole frontend.</li>
-        <li>Calendar/booking UI: date picker, slot availability, validations.</li>
-        <li>Order forms with conditional flows and server-side validation feedback.</li>
-      </ul>
-      <div>
-        <img src="neodoc.png" alt="NEO DOC" class="ex-image"/>
-        <img src="calendar.png" alt="NEO DOC calendar" class="ex-image"/>
-      </div>
-    </section>
-
-    <section>
-      <h4 class="title">NBFIT</h4>
-      <ul>
-        <li><span class="sub-title">Frontend Engineer</span></li>
-        <li>May 2021 — Jul 2021 (3 months)</li>
-        <li>Bishkek, Kyrgyzstan</li>
-      </ul>
-      <p class="sub-title">Selected work</p>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li>Built the breathing-exercise interactive module — animation timing tuned for actual breath cycles, not stock easing curves.</li>
-      </ul>
-      <div>
-        <img src="breath.png" alt="NBFIT" class="ex-image"/>
-      </div>
-    </section>
-
-    <section>
-      <h4 class="title">Stack</h4>
-      <ul style="list-style: disc;" class="desc-ul">
-        <li><strong>Languages:</strong> TypeScript (daily), JavaScript (ES6+), HTML5, CSS3.</li>
-        <li><strong>Frameworks:</strong> React 18 (incl. concurrent, Suspense, hooks-deep), Vue 2/3, Nuxt, Next.js.</li>
-        <li><strong>State:</strong> Redux Toolkit, MobX-State-Tree, Zustand, Vuex; React Query / TanStack Query.</li>
-        <li><strong>Real-time:</strong> WebSockets, Matrix JS SDK + Synapse, intersection-observer flows, virtualized lists (react-window, react-virtualized).</li>
-        <li><strong>Desktop:</strong> Electron — multi-window IPC, file system integration, native menus, system tray.</li>
-        <li><strong>Styling:</strong> SCSS / Less, styled-components, emotion, Tailwind, Framer Motion.</li>
-        <li><strong>Testing:</strong> Jest, React Testing Library, Playwright (e2e smoke).</li>
-        <li><strong>Build/infra:</strong> Vite, Webpack, Babel, Docker Compose, GitHub Actions.</li>
-        <li><strong>Networking & data:</strong> REST, GraphQL (consumer), Axios/Fetch, REST cache strategies.</li>
-        <li><strong>Adjacent:</strong> Node.js for full-stack work, FastAPI for personal tooling, basic blockchain & E2E encryption.</li>
-        <li><strong>Tools:</strong> Figma, Adobe XD, Zeplin; Jira / GitHub / GitLab / YouTrack; agile & scrum at varied team sizes.</li>
-        <li><strong>Languages (human):</strong> Russian (native, interview-ready), English (technical reading & writing fluent, conversational ok).</li>
-      </ul>
-    </section>
-
-    <section style="padding-bottom: 100px">
-      <div class="about-contact">
-        <h3 class="title">Contacts</h3>
-        <div class="el"><span><i class="fas fa-map-marked-alt"></i></span>
-          <a href="https://www.google.com/maps/place/Bishkek/">Bishkek, Kyrgyzstan</a>
+      <article class="role">
+        <div class="meta">
+          <div class="dates">2022 – 2023</div>
+          <div class="duration">1y 5m</div>
         </div>
-        <div class="el"><span><i class="fas fa-envelope-open"></i></span>
-          <a href="mailto:homeronkis@gmail.com">homeronkis@gmail.com</a>
+        <div class="body">
+          <div class="company">Alandarev — Redux External</div>
+          <div class="title">Senior Frontend Engineer · Remote</div>
+          <div class="stack-line">React · Redux Toolkit · Jest · MongoDB · Electron · virtualized lists</div>
+          <ul>
+            <li>Owned the chat module of a Zoom-class corporate communications client. Designed for the cases real chat hits: long histories, simultaneous threads, attachments.</li>
+            <li>Virtualized message lists — instant open even on multi-thousand-message threads, scrolls without jank on slow machines.</li>
+            <li>Detached chat windows via Electron IPC: open any thread in a separate window, drag across monitors, keep state in sync.</li>
+            <li>Attachment pipeline: upload with progress, paste-from-clipboard, image preview, retry on flaky network.</li>
+            <li>Read-receipt batching via Intersection Observer — messages mark as read only when actually visible, batched to avoid network thrash.</li>
+          </ul>
         </div>
-        <div class="el"><span><i class="fab fa-linkedin"></i></span>
-          <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/">linkedin.com/in/igor-kim</a>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <div class="dates">2020 – 2021</div>
+          <div class="duration">1y 3m</div>
+        </div>
+        <div class="body">
+          <div class="company">Pocketnet</div>
+          <div class="title">Senior Frontend Engineer (chat lead) · Remote</div>
+          <div class="stack-line">VueJS · Matrix JS SDK · Synapse · E2E encryption · Docker</div>
+          <ul>
+            <li>Built the entire chat product on Matrix protocol — solo for the first six months, then leading a two-engineer team. Roughly 60% of the Matrix JS SDK surface used; integration is reusable across any future project.</li>
+            <li>Direct & group chats, contact management with search, user invites, group admin (members, files, images, rename).</li>
+            <li>Message types: text, images with inline preview, files with download, URL link previews, image gallery view.</li>
+            <li>End-to-end encryption flows wired via Matrix's crypto APIs.</li>
+            <li>Same codebase serves desktop, tablet, mobile with adapted interaction patterns.</li>
+          </ul>
+          <a class="live-link" href="https://pocketnet.app/index">Live product →</a>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <div class="dates">2020 – 2021</div>
+          <div class="duration">9m</div>
+        </div>
+        <div class="body">
+          <div class="company">AZARA</div>
+          <div class="title">Senior Frontend Engineer · Amsterdam · Remote</div>
+          <div class="stack-line">VueJS · NuxtJS · SCSS · WebSockets</div>
+          <ul>
+            <li>Crypto exchange front-end: order forms, order history with filters, exchange-history accordions with rich data, real-time order book via WebSocket.</li>
+            <li>Owned the client side end-to-end — landing, demo, transactional flows.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <div class="dates">2019 – 2020</div>
+          <div class="duration">1y 5m</div>
+        </div>
+        <div class="body">
+          <div class="company">BoxExchanger</div>
+          <div class="title">Senior Frontend Engineer · Amsterdam · Remote</div>
+          <div class="stack-line">VueJS · NuxtJS · SCSS</div>
+          <ul>
+            <li>Owned the entire client side: <a href="https://www.boxexchanger.net/en">marketing site</a>,
+              <a href="https://example.boxexchanger.net/">trading demo</a>,
+              <a href="https://admin-example.boxexchanger.net/">admin panel</a>.</li>
+            <li>Crypto-exchange forms with multi-step validation, auth & registration flows, partners directory, search & filter UIs.</li>
+            <li>Translated complex finance flows (rate calculations, fee disclosure, KYC steps) into UIs that don't lose users mid-transaction.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <div class="dates">2021</div>
+          <div class="duration">4m</div>
+        </div>
+        <div class="body">
+          <div class="company">NEO DOC</div>
+          <div class="title">Frontend Engineer · Tech Lead, MVP · Bishkek</div>
+          <div class="stack-line">VueJS</div>
+          <ul>
+            <li>Took the MVP from spec to release as the sole frontend.</li>
+            <li>Calendar/booking UI: date picker, slot availability, validations.</li>
+            <li>Order forms with conditional flows and server-side validation feedback.</li>
+          </ul>
+          <a class="live-link" href="https://dev.neodoc.io/">Live MVP →</a>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <div class="dates">2018 – 2019</div>
+          <div class="duration">1y 1m</div>
+        </div>
+        <div class="body">
+          <div class="company">OptDyn / Subutai</div>
+          <div class="title">Frontend Engineer · Delaware · Remote</div>
+          <div class="stack-line">Angular 1.5 · jQuery · DataTables · Three.js</div>
+          <ul>
+            <li>Built and shipped the <a href="https://subutai.io/">Subutai.io</a> marketing site.</li>
+            <li>Implemented core product flows for <a href="https://bazaar.subutai.io/login">Bazaar</a> — refactored legacy code, removed unused libs, modernised dependencies.</li>
+            <li>Browser extension that generated PGP keys for the user's wallet after auth.</li>
+            <li>Container backup & snapshot UIs (docker-style snapshots, rendered client-side from raw API data).</li>
+            <li>Heavy data-table work — sortable, filterable, resizable, with custom cell renderers.</li>
+            <li>3D globe visualisation via Three.js for the network topology view.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <div class="stack">
+
+      <div class="stack-group">
+        <div class="stack-label">Primary</div>
+        <div class="pills">
+          <span class="pill accent">TypeScript</span>
+          <span class="pill accent">React 18</span>
+          <span class="pill">JavaScript ES6+</span>
+          <span class="pill">HTML5 / CSS3</span>
         </div>
       </div>
-    </section>
-  </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Frameworks</div>
+        <div class="pills">
+          <span class="pill">Next.js</span>
+          <span class="pill">Vue 2 / 3</span>
+          <span class="pill">Nuxt</span>
+          <span class="pill">Electron</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">State & data</div>
+        <div class="pills">
+          <span class="pill">Redux Toolkit</span>
+          <span class="pill">MobX-State-Tree</span>
+          <span class="pill">Zustand</span>
+          <span class="pill">TanStack Query</span>
+          <span class="pill">Vuex</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Real-time & comms</div>
+        <div class="pills">
+          <span class="pill">WebSockets</span>
+          <span class="pill">Matrix JS SDK</span>
+          <span class="pill">Synapse</span>
+          <span class="pill">react-window</span>
+          <span class="pill">Intersection Observer</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Styling & motion</div>
+        <div class="pills">
+          <span class="pill">Tailwind</span>
+          <span class="pill">SCSS / Less</span>
+          <span class="pill">styled-components</span>
+          <span class="pill">emotion</span>
+          <span class="pill">Framer Motion</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Testing & build</div>
+        <div class="pills">
+          <span class="pill">Jest</span>
+          <span class="pill">React Testing Library</span>
+          <span class="pill">Playwright</span>
+          <span class="pill">Vite</span>
+          <span class="pill">Webpack</span>
+          <span class="pill">Docker Compose</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Adjacent</div>
+        <div class="pills">
+          <span class="pill">Node.js</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">REST / GraphQL</span>
+          <span class="pill">E2E encryption</span>
+          <span class="pill">Web Push (VAPID)</span>
+          <span class="pill">PWA / Service Workers</span>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Languages</div>
+        <div class="pills">
+          <span class="pill">Russian — native, interview-ready</span>
+          <span class="pill">English — technical reading & writing fluent, conversational ok</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="contacts">
+    <a href="mailto:homeronkis@gmail.com">homeronkis@gmail.com</a>
+    <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/">LinkedIn</a>
+    <span>Bishkek · UTC+6</span>
+    <p>Built static, Less + Inter + JetBrains Mono. Source: <a href="https://github.com/homeronkis/CV_homeronkis">github.com/homeronkis/CV_homeronkis</a></p>
+  </footer>
 
 </main>
 
