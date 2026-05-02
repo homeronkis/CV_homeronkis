@@ -12,13 +12,19 @@
 
 ## Summary
 
-Senior Frontend Engineer with 7+ years building real-time, performance-critical interfaces:
-chat at scale (Matrix SDK, virtualized lists for 10k+ messages), crypto-exchange UIs, FinTech
-dashboards, Electron desktop apps. React / TypeScript today; deep history in Vue / Nuxt.
+Senior Frontend Engineer with 7+ years. Real-time chat at scale on Matrix SDK (10k+ message
+virtualized threads), crypto-exchange UIs in Amsterdam (BoxExchanger, AZARA), Electron desktop
+chat (Alandarev), and AI-agent-callable tooling I'm shipping right now.
+
+Most of the last seven years has been chat and finance: Matrix protocol from scratch at
+Pocketnet, virtualized 10k+ message threads in a Zoom-class desktop client at Alandarev, crypto
+exchanges in Amsterdam. Sole frontend or chat lead in most of these — comfortable as the only
+person who owns the client side end-to-end.
 
 Currently building a daily-briefing PWA on React 18 / Vite / FastAPI with a pluggable apps
-architecture (manifest-declared surfaces, MCP-callable tools, hot mount/unmount, schema-versioned
-permissions). Source on GitHub, live at dashboard.heiks.uk.
+architecture: manifest-declared surfaces, MCP-callable tools so AI agents can interact with each
+app, hot mount/unmount, schema-versioned permissions. 438 backend tests / 96% coverage.
+Source on GitHub, live at dashboard.heiks.uk.
 
 ---
 
@@ -52,19 +58,19 @@ permissions). Source on GitHub, live at dashboard.heiks.uk.
 
 ## Experience
 
-### Personal projects · AI-driven tooling — 2024 to present
+### Heiks — daily-briefing PWA · 2024 to present
 
-Building / shipping / iterating.
+**Architect & solo engineer · Live at dashboard.heiks.uk**
 
 **Stack:** React 18, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Vitest, Cloudflare Tunnel.
 
-- Built a daily-briefing PWA from scratch — React 18 / Vite / FastAPI backend, deployed live at dashboard.heiks.uk via Cloudflare Tunnel + Cloudflare Access (Google OAuth gate, no port-forward).
-- Designed a pluggable apps architecture: each feature is a self-contained `apps/{slug}/` container (manifest.json + frontend + backend + data scope + permissions). Hot mount/unmount without server restart. Manifest-declared surfaces (UI, REST API, MCP-callable tools) so any app can expose itself to AI agents.
-- Wrote a Vite plugin that scans `apps/` at build time and generates the registry + lazy import loaders. New app = drop a folder, push, done.
-- AI scoring pipeline for jobs and news: regex pre-filter → Claude Haiku via subprocess for ranking, mood-aware filter rules, emergency fallback pool when LLM is unavailable.
-- VAPID Web Push + service worker with offline cache + background pipeline-completion notifier. Debugged a real-world pywebpush 2.x ↔ py_vapid PEM-vs-DER mismatch and shipped the migration in production.
-- Test discipline: 438 backend tests at 96% line coverage (every module ≥90%), 26 frontend Vitest unit tests, 19/19 Playwright e2e smoke. Lazy-loaded non-default pages reduce initial bundle ~30%.
-- Source: https://github.com/homeronkis. Used daily on iPhone PWA.
+- Pluggable apps architecture — each feature is a self-contained `apps/{slug}/` container with manifest.json declaring three surfaces (UI / REST API / MCP-callable tools), data scope, and a whitelist permission set. Apps hot-mount/unmount on toggle without server restart.
+- Built a Vite plugin that scans `apps/` at build time and emits a typed registry with lazy import loaders. Adding a feature is dropping a folder.
+- AI scoring pipeline for incoming jobs and news: regex pre-filter → Claude Haiku via subprocess for ranking, mood-aware filter rules, structured-JSON contract, emergency fallback pool when the LLM is unavailable.
+- VAPID Web Push + service worker with offline cache and background pipeline-completion notifier. Diagnosed and shipped a fix for a pywebpush 2.x ↔ py_vapid PEM-vs-DER mismatch in production.
+- Cloudflare Tunnel + Cloudflare Access (Google OAuth) for zero-port-forward delivery on a residential connection.
+- Test discipline: 438 backend tests at 96% line coverage (every module ≥90%), 26 Vitest unit, 19/19 Playwright e2e. Lazy chunks for non-landing pages cut initial bundle ~30%.
+- Source: https://github.com/homeronkis.
 
 ### Alandarev — Redux External — Mar 2022 to Aug 2023 · 1 y 5 m
 
@@ -141,11 +147,10 @@ Building / shipping / iterating.
 
 ## What I do best (signature niches)
 
-- **Real-time chat and messaging.** Matrix SDK, WebSockets, custom virtualization for 10k+ message threads, encryption pipelines (Olm / Megolm), image / file attachments with preview, typing indicators, read-receipt batching.
-- **Crypto and FinTech UIs.** Exchange forms, order histories, partner pages with auth, wallet integrations, USDT payments, multi-step KYC flows that don't lose users mid-transaction.
-- **Performance work.** Profiling React renders, bundle splitting, virtualized lists (react-window / react-virtualized), intersection-observer-driven lazy loading, network-aware caching.
-- **State at scale.** Redux Toolkit, MobX-State-Tree, Zustand, TanStack Query. Picking the right tool for the shape of the data, not the framework of the year.
-- **Cross-platform clients.** Electron desktop apps with multi-window IPC, native menus, system tray, file-system integration.
+- **Real-time chat at scale.** Matrix JS SDK (~60% surface used in production), Olm / Megolm E2E encryption, WebSockets, virtualized 10k+ message threads via react-window + Intersection Observer, paste-from-clipboard attachments, batched read-receipts.
+- **Crypto and FinTech UIs.** Exchange forms, real-time order books over WebSocket, multi-step AML/KYC flows that hold conversion KPI as the team's primary metric, wallet and USDT payment integrations.
+- **Performance work.** React render profiling, bundle splitting (lazy chunks for non-landing pages, ~30% initial-bundle cut on my dashboard), intersection-observer lazy loading, network-aware caching, virtualization where the data is real-world large.
+- **AI-aware frontends.** Building plugin architectures where each feature exposes UI, REST API, and MCP-callable tools — so a Claude or GPT agent can act on the same surfaces a human uses. Pragmatic LLM integration via subprocess plus structured-JSON contracts plus emergency fallback pools.
 
 ---
 

@@ -21,9 +21,9 @@
     <h1>Igor Kim</h1>
     <p class="role">Senior Frontend Engineer · React / TypeScript</p>
     <div class="skim">
-      <strong>7+ years.</strong> Real-time chat at scale (Matrix SDK, virtualized lists for 10k+ messages),
-      crypto-exchange UIs, FinTech dashboards, Electron desktop apps.
-      Recently exploring AI-driven personal tooling.
+      <strong>7+ years.</strong> Real-time chat at scale on Matrix SDK (10k+ message
+      virtualized threads), crypto-exchange UIs in Amsterdam, Electron desktop chat,
+      and AI-agent-callable tooling I'm shipping right now.
     </div>
     <div class="contacts">
       <span>📍 Bishkek · UTC+6 · remote ±3h MSK</span>
@@ -35,21 +35,21 @@
   <section class="about">
     <h2>About</h2>
     <p>
-      I build the parts users feel — input latency, perceived speed,
-      the way state moves between screens. I don't ship "looks finished but breaks
-      under real data" UIs.
+      I build the parts users feel — input latency, perceived speed, the way state
+      moves between screens. My UIs hold up under real data, not just the happy path.
     </p>
     <p>
-      Code I leave behind is small, typed, tested where it matters, easy for the next
-      person to read. I pick state-management tools by the shape of the data, not the
-      framework du jour. I profile before I optimize, and I write down the why before
-      the what.
+      Most of the last seven years has been chat and finance: Matrix protocol from
+      scratch at Pocketnet, virtualized lists for 10k+ message threads in a Zoom-class
+      desktop client at Alandarev, crypto exchanges (BoxExchanger, AZARA) in Amsterdam.
+      Sole frontend or chat lead in most of these — comfortable as the only person
+      who owns the client side end-to-end.
     </p>
     <p>
-      Currently building a daily-briefing PWA on React 18 / Vite / FastAPI with a
-      pluggable apps architecture (manifest-declared surfaces, MCP-callable tools, hot
-      mount/unmount, schema-versioned permissions). Useful as a portfolio of how I
-      think about systems beyond a single screen.
+      Right now I'm building a daily-briefing PWA (React 18 / FastAPI) with a
+      pluggable apps architecture: manifest-declared surfaces, MCP-callable tools so
+      AI agents can interact with each app, hot mount/unmount, schema-versioned
+      permissions. 438 backend tests / 96% coverage. <a href="https://github.com/homeronkis">github.com/homeronkis</a>.
     </p>
   </section>
 
@@ -57,24 +57,20 @@
     <h2>What I do best</h2>
     <div class="signatures">
       <div class="item">
-        <div class="label">Real-time chat & messaging</div>
-        <div class="body">Matrix SDK, WebSockets, custom virtualization for thousand-message threads, encryption pipelines, image/file attachments with preview, typing indicators, read-receipt batching.</div>
+        <div class="label">Real-time chat at scale</div>
+        <div class="body">Matrix JS SDK (~60% surface used in production), Olm/Megolm E2E encryption, WebSockets, virtualized 10k+ message threads via react-window + Intersection Observer, paste-from-clipboard attachments, batched read-receipts.</div>
       </div>
       <div class="item">
         <div class="label">Crypto & FinTech UIs</div>
-        <div class="body">Exchange forms, order histories, partner pages with auth, wallet integrations, USDT payments, multi-step KYC flows that don't lose users mid-transaction.</div>
+        <div class="body">Exchange forms, real-time order books over WebSocket, multi-step AML/KYC flows that hold conversion KPI as the team's primary metric, wallet & USDT payment integrations.</div>
       </div>
       <div class="item">
         <div class="label">Performance work</div>
-        <div class="body">Profiling React renders, bundle splitting, virtualized lists (react-window / react-virtualized), intersection-observer-driven lazy loading, network-aware caching.</div>
+        <div class="body">React render profiling, bundle splitting (lazy chunks for non-landing pages, ~30% initial-bundle cut on my dashboard), intersection-observer lazy loading, network-aware caching, virtualization where the data is real-world large.</div>
       </div>
       <div class="item">
-        <div class="label">State at scale</div>
-        <div class="body">Redux Toolkit, MobX-State-Tree, Zustand, TanStack Query. Picking the right tool for the shape of the data, not the framework of the year.</div>
-      </div>
-      <div class="item">
-        <div class="label">Cross-platform clients</div>
-        <div class="body">Electron desktop apps with multi-window flows, IPC, native menus, system tray, file-system integration.</div>
+        <div class="label">AI-aware frontends</div>
+        <div class="body">Building plugin architectures where each feature exposes UI, REST API, and MCP-callable tools — so a Claude or GPT agent can act on the same surfaces a human uses. Pragmatic LLM integration via subprocess + structured-JSON contracts + emergency fallback pools.</div>
       </div>
     </div>
   </section>
@@ -89,17 +85,17 @@
           <div class="duration">ongoing</div>
         </div>
         <div class="body">
-          <div class="company">Personal projects · AI-driven tooling</div>
-          <div class="title">Building / shipping / iterating</div>
+          <div class="company">Heiks — daily-briefing PWA</div>
+          <div class="title">Architect & solo engineer · Live at dashboard.heiks.uk</div>
           <div class="stack-line">React 18 · TypeScript · Vite · TanStack Query · Framer Motion · FastAPI · Pydantic · Playwright · Vitest · Cloudflare Tunnel</div>
           <ul>
-            <li>Built a daily-briefing PWA from scratch — React 18 / Vite / FastAPI backend, deployed live at <a href="https://dashboard.heiks.uk">dashboard.heiks.uk</a> via Cloudflare Tunnel + Cloudflare Access (Google OAuth gate, no port-forward).</li>
-            <li>Designed a pluggable apps architecture: each feature is a self-contained <code>apps/{slug}/</code> container (manifest.json + frontend / backend / data scope / permissions). Hot mount/unmount without server restart. Manifest-declared surfaces (UI, REST API, MCP-callable tools) so any app can expose itself to AI agents.</li>
-            <li>Wrote a Vite plugin that scans <code>apps/</code> at build time and generates the registry + lazy import loaders. New app = drop a folder, push, done.</li>
-            <li>AI scoring pipeline for jobs / news: regex pre-filter → Claude Haiku via subprocess for ranking, with mood-aware filter rules and emergency fallback pool when the LLM is unavailable.</li>
-            <li>VAPID Web Push + service worker with offline cache + background pipeline-completion notifier. Debugged a real-world pywebpush 2.x ↔ py_vapid PEM-vs-DER mismatch and shipped the migration in production.</li>
-            <li>Test discipline: 438 backend tests at 96% line coverage (every module ≥90%), 26 frontend Vitest unit tests, 19/19 Playwright e2e smoke. Lazy-loaded non-default pages → ~30% smaller initial bundle.</li>
-            <li>Source: <a href="https://github.com/homeronkis">github.com/homeronkis</a>. The dashboard is shipped, used daily on iPhone PWA, tracks real job applications.</li>
+            <li>Pluggable apps architecture — each feature is a self-contained <code>apps/{slug}/</code> container with manifest.json declaring three surfaces (UI / REST API / MCP-callable tools), data scope, and a whitelist permission set. Apps hot-mount/unmount on toggle without server restart.</li>
+            <li>Built a Vite plugin that scans <code>apps/</code> at build time and emits a typed registry with lazy import loaders. Adding a feature is dropping a folder.</li>
+            <li>AI scoring pipeline for incoming jobs and news: regex pre-filter → Claude Haiku via subprocess for ranking, mood-aware filter rules, structured-JSON contract, emergency fallback pool when the LLM is unavailable.</li>
+            <li>VAPID Web Push + service worker with offline cache and background pipeline-completion notifier. Diagnosed and shipped a fix for a pywebpush 2.x ↔ py_vapid PEM-vs-DER mismatch in production.</li>
+            <li>Cloudflare Tunnel + Cloudflare Access (Google OAuth) for zero-port-forward delivery on a residential connection.</li>
+            <li>Test discipline: 438 backend tests at 96% line coverage (every module ≥90%), 26 Vitest unit, 19/19 Playwright e2e. Lazy chunks for non-landing pages cut initial bundle ~30%.</li>
+            <li>Source: <a href="https://github.com/homeronkis">github.com/homeronkis</a>.</li>
           </ul>
         </div>
       </article>
@@ -114,12 +110,11 @@
           <div class="title">Senior Frontend Engineer · Remote</div>
           <div class="stack-line">React · Redux Toolkit · Jest · MongoDB · Electron · virtualized lists</div>
           <ul>
-            <li>Owned the chat module of a Zoom-class corporate communications client. Designed for the cases real chat hits: long histories, simultaneous threads, attachments.</li>
-            <li>Virtualized message lists handle 10k+ messages per thread — instant scroll-to-bottom open, no jank on low-end machines via react-window + intersection observer.</li>
-            <li>Detached chat windows via Electron IPC: open any thread in a separate window, drag across monitors, keep state in sync across them.</li>
-            <li>Attachment pipeline: upload with progress, paste-from-clipboard, image preview, exponential-backoff retry on flaky network.</li>
-            <li>Read-receipt batching via Intersection Observer — messages mark as read only when actually visible, batched to one server call per second instead of one per message.</li>
-            <li>Custom context menus on attachments and messages, keyboard shortcuts, polished hover/focus states across the chat surface.</li>
+            <li>Owned the chat module of a corporate communications desktop client (Zoom-class video + chat product).</li>
+            <li>Virtualized message lists for 10k+ messages per thread via react-window + Intersection Observer — instant scroll-to-bottom open, no jank on low-end machines.</li>
+            <li>Detached chat windows over Electron IPC: open any thread in a separate window, drag across monitors, keep state synced across them.</li>
+            <li>Attachment pipeline — upload with progress, paste-from-clipboard, image preview, exponential-backoff retry on flaky network.</li>
+            <li>Read-receipt batching via Intersection Observer: messages mark as read only when actually visible, batched to roughly one server call per second instead of per-message.</li>
           </ul>
         </div>
       </article>
@@ -134,11 +129,11 @@
           <div class="title">Senior Frontend Engineer (chat lead) · Remote</div>
           <div class="stack-line">VueJS · Matrix JS SDK · Synapse · E2E encryption · Docker</div>
           <ul>
-            <li>Built the entire chat product on Matrix protocol from zero. Solo for the first 6 months, then led a two-engineer team for the remaining 9 months. Roughly 60% of the Matrix JS SDK surface used; the integration layer is reusable as a library on any future Matrix-based project.</li>
-            <li>Direct & group chats, contact management with search across thousands of users, invites, group admin (members, files, images, rename, mute, kick).</li>
-            <li>Message types: text, images with inline preview, files with progress / download / preview, URL link previews via OpenGraph fetch, image gallery view, reply threads.</li>
-            <li>End-to-end encryption flows wired via Matrix's crypto APIs (Olm/Megolm) — key verification, device cross-signing, encrypted attachments.</li>
-            <li>Same codebase serves desktop, tablet, mobile with adapted interaction patterns and responsive layouts.</li>
+            <li>Built the chat product on Matrix protocol from zero. Solo for the first 6 months, then led a two-engineer team for the remaining 9. Roughly 60% of the Matrix JS SDK surface used in production.</li>
+            <li>Direct and group chats, contact management with search across thousands of users, invites, group admin (members, files, images, rename, mute, kick).</li>
+            <li>End-to-end encryption via Matrix Olm/Megolm — key verification, device cross-signing, encrypted attachments.</li>
+            <li>Message surface: text, images with inline preview, files with progress and preview, URL link previews via OpenGraph fetch, image gallery, reply threads.</li>
+            <li>Single codebase serves desktop, tablet, mobile with responsive layouts and adapted interaction patterns.</li>
           </ul>
           <a class="live-link" href="https://pocketnet.app/index">Live product →</a>
         </div>
@@ -208,12 +203,9 @@
           <div class="title">Frontend Engineer · Delaware · Remote</div>
           <div class="stack-line">Angular 1.5 · jQuery · DataTables · Three.js</div>
           <ul>
-            <li>Built and shipped the <a href="https://subutai.io/">Subutai.io</a> marketing site.</li>
-            <li>Implemented core product flows for <a href="https://bazaar.subutai.io/login">Bazaar</a> — refactored legacy code, removed unused libs, modernised dependencies.</li>
-            <li>Browser extension that generated PGP keys for the user's wallet after auth.</li>
-            <li>Container backup & snapshot UIs (docker-style snapshots, rendered client-side from raw API data).</li>
-            <li>Heavy data-table work — sortable, filterable, resizable, with custom cell renderers.</li>
-            <li>3D globe visualisation via Three.js for the network topology view.</li>
+            <li>Built and shipped the <a href="https://subutai.io/">Subutai.io</a> marketing site and core flows for <a href="https://bazaar.subutai.io/login">Bazaar</a> (refactor, dep modernisation, dead-code removal).</li>
+            <li>Browser extension that generated PGP keys for the user's wallet after auth; container backup & snapshot UIs rendered client-side from raw API data.</li>
+            <li>3D globe visualisation via Three.js for the network topology view; sortable / filterable / resizable data tables with custom cell renderers.</li>
           </ul>
         </div>
       </article>
@@ -230,14 +222,6 @@
         <div class="pills">
           <span class="pill accent">TypeScript</span>
           <span class="pill accent">React 18</span>
-          <span class="pill">JavaScript ES6+</span>
-          <span class="pill">HTML5 / CSS3</span>
-        </div>
-      </div>
-
-      <div class="stack-group">
-        <div class="stack-label">Frameworks</div>
-        <div class="pills">
           <span class="pill">Next.js</span>
           <span class="pill">Vue 2 / 3</span>
           <span class="pill">Nuxt</span>
@@ -253,6 +237,7 @@
           <span class="pill">Zustand</span>
           <span class="pill">TanStack Query</span>
           <span class="pill">Vuex</span>
+          <span class="pill">REST / GraphQL</span>
         </div>
       </div>
 
@@ -262,8 +247,10 @@
           <span class="pill">WebSockets</span>
           <span class="pill">Matrix JS SDK</span>
           <span class="pill">Synapse</span>
+          <span class="pill">Olm / Megolm E2E</span>
           <span class="pill">react-window</span>
           <span class="pill">Intersection Observer</span>
+          <span class="pill">Web Push (VAPID)</span>
         </div>
       </div>
 
@@ -283,10 +270,11 @@
         <div class="pills">
           <span class="pill">Jest</span>
           <span class="pill">React Testing Library</span>
+          <span class="pill">Vitest</span>
           <span class="pill">Playwright</span>
           <span class="pill">Vite</span>
           <span class="pill">Webpack</span>
-          <span class="pill">Docker Compose</span>
+          <span class="pill">GitHub Actions</span>
         </div>
       </div>
 
@@ -295,22 +283,18 @@
         <div class="pills">
           <span class="pill">Node.js</span>
           <span class="pill">FastAPI</span>
-          <span class="pill">REST / GraphQL</span>
-          <span class="pill">E2E encryption</span>
-          <span class="pill">Web Push (VAPID)</span>
+          <span class="pill">Pydantic</span>
+          <span class="pill">Docker Compose</span>
           <span class="pill">PWA / Service Workers</span>
-        </div>
-      </div>
-
-      <div class="stack-group">
-        <div class="stack-label">Languages</div>
-        <div class="pills">
-          <span class="pill">Russian — native, interview-ready</span>
-          <span class="pill">English — technical reading & writing fluent, conversational ok</span>
+          <span class="pill">Claude API / MCP</span>
         </div>
       </div>
 
     </div>
+    <p style="margin-top: 24px; font-size: 13px; color: rgb(161 161 170); line-height: 1.5;">
+      <strong style="color: rgb(250 250 250);">Languages.</strong> Russian — native, interview-ready.
+      English — technical reading and writing fluent, conversational ok.
+    </p>
   </section>
 
   <footer class="contacts">
