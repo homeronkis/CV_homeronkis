@@ -85,6 +85,27 @@
 
       <article class="role">
         <div class="meta">
+          <div class="dates">2024 – present</div>
+          <div class="duration">ongoing</div>
+        </div>
+        <div class="body">
+          <div class="company">Personal projects · AI-driven tooling</div>
+          <div class="title">Building / shipping / iterating</div>
+          <div class="stack-line">React 18 · TypeScript · Vite · TanStack Query · Framer Motion · FastAPI · Pydantic · Playwright · Vitest · Cloudflare Tunnel</div>
+          <ul>
+            <li>Built a daily-briefing PWA from scratch — React 18 / Vite / FastAPI backend, deployed live at <a href="https://dashboard.heiks.uk">dashboard.heiks.uk</a> via Cloudflare Tunnel + Cloudflare Access (Google OAuth gate, no port-forward).</li>
+            <li>Designed a pluggable apps architecture: each feature is a self-contained <code>apps/{slug}/</code> container (manifest.json + frontend / backend / data scope / permissions). Hot mount/unmount without server restart. Manifest-declared surfaces (UI, REST API, MCP-callable tools) so any app can expose itself to AI agents.</li>
+            <li>Wrote a Vite plugin that scans <code>apps/</code> at build time and generates the registry + lazy import loaders. New app = drop a folder, push, done.</li>
+            <li>AI scoring pipeline for jobs / news: regex pre-filter → Claude Haiku via subprocess for ranking, with mood-aware filter rules and emergency fallback pool when the LLM is unavailable.</li>
+            <li>VAPID Web Push + service worker with offline cache + background pipeline-completion notifier. Debugged a real-world pywebpush 2.x ↔ py_vapid PEM-vs-DER mismatch and shipped the migration in production.</li>
+            <li>Test discipline: 438 backend tests at 96% line coverage (every module ≥90%), 26 frontend Vitest unit tests, 19/19 Playwright e2e smoke. Lazy-loaded non-default pages → ~30% smaller initial bundle.</li>
+            <li>Source: <a href="https://github.com/homeronkis">github.com/homeronkis</a>. The dashboard is shipped, used daily on iPhone PWA, tracks real job applications.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
           <div class="dates">2022 – 2023</div>
           <div class="duration">1y 5m</div>
         </div>
@@ -94,10 +115,11 @@
           <div class="stack-line">React · Redux Toolkit · Jest · MongoDB · Electron · virtualized lists</div>
           <ul>
             <li>Owned the chat module of a Zoom-class corporate communications client. Designed for the cases real chat hits: long histories, simultaneous threads, attachments.</li>
-            <li>Virtualized message lists — instant open even on multi-thousand-message threads, scrolls without jank on slow machines.</li>
-            <li>Detached chat windows via Electron IPC: open any thread in a separate window, drag across monitors, keep state in sync.</li>
-            <li>Attachment pipeline: upload with progress, paste-from-clipboard, image preview, retry on flaky network.</li>
-            <li>Read-receipt batching via Intersection Observer — messages mark as read only when actually visible, batched to avoid network thrash.</li>
+            <li>Virtualized message lists handle 10k+ messages per thread — instant scroll-to-bottom open, no jank on low-end machines via react-window + intersection observer.</li>
+            <li>Detached chat windows via Electron IPC: open any thread in a separate window, drag across monitors, keep state in sync across them.</li>
+            <li>Attachment pipeline: upload with progress, paste-from-clipboard, image preview, exponential-backoff retry on flaky network.</li>
+            <li>Read-receipt batching via Intersection Observer — messages mark as read only when actually visible, batched to one server call per second instead of one per message.</li>
+            <li>Custom context menus on attachments and messages, keyboard shortcuts, polished hover/focus states across the chat surface.</li>
           </ul>
         </div>
       </article>
@@ -112,11 +134,11 @@
           <div class="title">Senior Frontend Engineer (chat lead) · Remote</div>
           <div class="stack-line">VueJS · Matrix JS SDK · Synapse · E2E encryption · Docker</div>
           <ul>
-            <li>Built the entire chat product on Matrix protocol — solo for the first six months, then leading a two-engineer team. Roughly 60% of the Matrix JS SDK surface used; integration is reusable across any future project.</li>
-            <li>Direct & group chats, contact management with search, user invites, group admin (members, files, images, rename).</li>
-            <li>Message types: text, images with inline preview, files with download, URL link previews, image gallery view.</li>
-            <li>End-to-end encryption flows wired via Matrix's crypto APIs.</li>
-            <li>Same codebase serves desktop, tablet, mobile with adapted interaction patterns.</li>
+            <li>Built the entire chat product on Matrix protocol from zero. Solo for the first 6 months, then led a two-engineer team for the remaining 9 months. Roughly 60% of the Matrix JS SDK surface used; the integration layer is reusable as a library on any future Matrix-based project.</li>
+            <li>Direct & group chats, contact management with search across thousands of users, invites, group admin (members, files, images, rename, mute, kick).</li>
+            <li>Message types: text, images with inline preview, files with progress / download / preview, URL link previews via OpenGraph fetch, image gallery view, reply threads.</li>
+            <li>End-to-end encryption flows wired via Matrix's crypto APIs (Olm/Megolm) — key verification, device cross-signing, encrypted attachments.</li>
+            <li>Same codebase serves desktop, tablet, mobile with adapted interaction patterns and responsive layouts.</li>
           </ul>
           <a class="live-link" href="https://pocketnet.app/index">Live product →</a>
         </div>
@@ -132,8 +154,8 @@
           <div class="title">Senior Frontend Engineer · Amsterdam · Remote</div>
           <div class="stack-line">VueJS · NuxtJS · SCSS · WebSockets</div>
           <ul>
-            <li>Crypto exchange front-end: order forms, order history with filters, exchange-history accordions with rich data, real-time order book via WebSocket.</li>
-            <li>Owned the client side end-to-end — landing, demo, transactional flows.</li>
+            <li>Crypto exchange front-end with real-time order book via WebSocket — order forms, order history with multi-axis filters, exchange-history accordions, live price ticks.</li>
+            <li>Owned the client side end-to-end across three surfaces — public landing, transactional demo, internal admin UI.</li>
           </ul>
         </div>
       </article>
@@ -148,11 +170,12 @@
           <div class="title">Senior Frontend Engineer · Amsterdam · Remote</div>
           <div class="stack-line">VueJS · NuxtJS · SCSS</div>
           <ul>
-            <li>Owned the entire client side: <a href="https://www.boxexchanger.net/en">marketing site</a>,
+            <li>Sole frontend for the whole product surface — three apps from scratch:
+              <a href="https://www.boxexchanger.net/en">marketing site</a>,
               <a href="https://example.boxexchanger.net/">trading demo</a>,
               <a href="https://admin-example.boxexchanger.net/">admin panel</a>.</li>
-            <li>Crypto-exchange forms with multi-step validation, auth & registration flows, partners directory, search & filter UIs.</li>
-            <li>Translated complex finance flows (rate calculations, fee disclosure, KYC steps) into UIs that don't lose users mid-transaction.</li>
+            <li>Crypto-exchange forms with multi-step validation, auth & registration flows, partners directory, search & filter UIs across thousands of items.</li>
+            <li>Translated complex finance flows (rate calculations, fee disclosure, AML/KYC steps) into UIs that don't drop users mid-transaction — the conversion KPI was the team's primary metric.</li>
           </ul>
         </div>
       </article>
@@ -293,6 +316,7 @@
   <footer class="contacts">
     <a href="mailto:homeronkis@gmail.com">homeronkis@gmail.com</a>
     <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/">LinkedIn</a>
+    <a href="https://github.com/homeronkis/CV_homeronkis/blob/main/CV.md">Plain-text CV (ATS)</a>
     <span>Bishkek · UTC+6</span>
     <p>Built static, Less + Inter + JetBrains Mono. Source: <a href="https://github.com/homeronkis/CV_homeronkis">github.com/homeronkis/CV_homeronkis</a></p>
   </footer>
