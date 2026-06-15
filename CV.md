@@ -2,7 +2,7 @@
 
 **Stack:** TypeScript, React 18, Next.js, Vue.js, Nuxt, Electron, Node.js
 **Niches:** real-time chat, virtualized lists, FinTech / crypto exchange UIs, AI-driven personal tooling
-**Location:** Bishkek, Kyrgyzstan · UTC+6 · remote, ±3 h MSK
+**Location:** Bishkek, Kyrgyzstan · UTC+6 (MSK+3) · remote
 **Email:** homeronkis@gmail.com
 **LinkedIn:** https://www.linkedin.com/in/igor-kim-45a3b817a/
 **Live CV:** https://homeronkis.github.io/CV_homeronkis/
@@ -52,7 +52,7 @@ Source on GitHub, live at dashboard.heiks.uk.
 
 **Methodology:** Scrum, Agile, async-friendly remote teams.
 
-**Languages (human):** Russian (native, interview-ready), English (technical reading & writing fluent, conversational ok).
+**Languages (human):** Russian (native, interview-ready), English (technical: reading, writing, async chat).
 
 ---
 
@@ -60,7 +60,7 @@ Source on GitHub, live at dashboard.heiks.uk.
 
 ### Heiks — daily-briefing PWA · 2024 to present
 
-**Architect & solo engineer · Live at dashboard.heiks.uk**
+**Founder & lead engineer · open-source · Live at dashboard.heiks.uk**
 
 **Stack:** React 18, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Vitest, Cloudflare Tunnel.
 
@@ -162,4 +162,4 @@ Source on GitHub, live at dashboard.heiks.uk.
 **GitHub:** https://github.com/homeronkis
 **Location:** Bishkek, Kyrgyzstan (UTC+6)
 
-Available: remote, full-time, ±3 h MSK timezone. Available now.
+Available: remote, full-time, UTC+6 (MSK+3). Available now.
