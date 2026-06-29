@@ -137,6 +137,73 @@
   }
   @keyframes signalflow{0%{background-position:150% 0}100%{background-position:-150% 0}}
   @media print{ header::after{display:none} }
+
+  /* ══ Direction A — "system readout" (sibling of projects.heiks.uk) ══════════
+     Repalette to the dawn/sunrise system, turn section heads into monospace
+     instrument labels, give experience a date-rail. Structure & content kept. */
+  :root{
+    --bg:#e9edf3; --card:#ffffff; --ink:#16233c; --soft:#586780; --faint:#93a1b8;
+    --line:#d8dfe9; --accent:#ff5a2c; --accent2:#ff5a2c; --accent-soft:#ffe7df;
+    --chip:#f1f4f8; --chip-ink:#3a4a63;
+  }
+  html[data-theme="dark"]{
+    --bg:#0c1018; --card:#121a26; --ink:#e9eff7; --soft:#9aa7bb; --faint:#65728a;
+    --line:#1d2735; --accent:#ff6a3d; --accent2:#ff6a3d; --accent-soft:#2a1712;
+    --chip:#16202e; --chip-ink:#c2cbdd;
+  }
+  body{background:var(--bg)}
+  .sheet{border-radius:6px;box-shadow:0 30px 60px -34px rgba(22,35,60,.34)}
+  a{color:var(--accent)}
+
+  /* masthead */
+  header{background:none;padding:36px 40px 22px}
+  header::after{background:var(--ink);height:2px;animation:none;opacity:1}
+  header::before{content:"// CURRICULUM_VITAE";position:absolute;top:16px;left:40px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--faint)}
+  .name{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-1.4px;
+    font-size:44px;background:none;-webkit-text-fill-color:initial;color:var(--ink);margin-top:14px}
+  .role{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12.5px;
+    letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin-top:8px}
+  .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--soft);margin-top:12px;gap:5px 16px}
+  .avail{font-family:'JetBrains Mono',monospace;font-size:12px}
+  .live{background:var(--accent);border-radius:5px}
+
+  /* instrument-panel section labels */
+  h2{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--soft);font-weight:700;padding:0 0 8px;
+    border-bottom:1px solid var(--line);display:block;margin-bottom:14px}
+  h2::after{display:none}
+  h2::before{content:"▸ ";color:var(--accent)}
+
+  /* spec column */
+  aside{background:none;border-right:1px solid var(--line)}
+  .contact a, .contact span{font-family:'JetBrains Mono',monospace;font-size:12px}
+
+  /* square instrument tags */
+  .chip{border-radius:3px;background:var(--chip);border:1px solid var(--line);
+    color:var(--chip-ink);font-size:10.5px;letter-spacing:.3px;padding:3px 7px}
+  .chip:hover{border-color:var(--accent);color:var(--accent);transform:none}
+  .skillgrp .t{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink)}
+
+  /* experience as a date-rail readout */
+  .summary b, .stackline b, .job-title{color:var(--ink)}
+  .job{border-bottom:1px solid var(--line);border-radius:0;padding:16px 0}
+  .job:hover{background:none}
+  .job-h{align-items:baseline}
+  .job-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px}
+  .job-title .co{color:var(--accent)}
+  .job-when{color:var(--accent);font-size:11.5px;letter-spacing:.3px}
+  .job-sub{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--soft)}
+  .stackline{font-family:'JetBrains Mono',monospace;font-size:11px}
+  ul.b li::before{border-radius:1px;background:var(--accent);opacity:.85;width:5px;height:5px;top:8px}
+  .ncard{border-radius:4px}
+  .ncard:hover{border-color:var(--accent);box-shadow:none;transform:none}
+
+  @media print{
+    .name{color:#000;-webkit-text-fill-color:#000}
+    header::before{color:#555}
+    h2::before{color:#000}
+  }
 </style>
 </head>
 <body>
