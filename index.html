@@ -30,6 +30,8 @@
   .meta b{color:var(--ink);font-weight:600}
   .avail{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:13px;color:var(--soft)}
   .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.16)}
+  .live{display:flex;width:fit-content;align-items:center;gap:8px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;color:#fff;background:var(--accent);padding:9px 15px;border-radius:9px;text-decoration:none;transition:transform .16s,filter .16s}
+  .live:hover{filter:brightness(1.08);transform:translateY(-1px);text-decoration:none}
   .toggle{position:absolute;top:26px;right:30px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:40px;height:40px;border-radius:11px;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:.2s}
   .toggle:hover{border-color:var(--accent);color:var(--accent)}
   #langBtn{right:78px;font-size:12.5px;font-weight:700}
@@ -150,6 +152,7 @@
       <span data-ru="🌐 Удалённо">🌐 Remote</span>
     </div>
     <div class="avail"><span class="dot"></span> <span data-ru="Готов приступить · удалённо, full-time / контракт">Available now · remote, full-time / contract</span></div>
+    <a class="live" href="https://projects.heiks.uk" target="_blank" rel="noopener" data-ru="▸ Живой проект — открыть демо">▸ See the live project — open the demo</a>
   </header>
 
   <div class="grid">
@@ -159,7 +162,7 @@
         <a href="mailto:homeronkis@gmail.com"><b>✉</b> homeronkis@gmail.com</a>
         <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/"><b>in</b> linkedin.com/in/igor-kim</a>
         <a href="https://github.com/homeronkis"><b>⌥</b> github.com/homeronkis</a>
-        <a href="https://dashboard.heiks.uk"><b>◆</b> dashboard.heiks.uk</a>
+        <a href="https://projects.heiks.uk"><b>◆</b> projects.heiks.uk · live project</a>
       </section>
 
       <section>
@@ -216,7 +219,7 @@
         <h2 data-ru="О себе">Summary</h2>
         <p data-ru="Senior Frontend-разработчик, <b>7+ лет</b> вывожу в продакшн веб- и десктоп-приложения. Глубоко в <b>чатах реального времени под нагрузкой</b> (Matrix SDK, виртуализация тредов на 10k+ сообщений), <b>FinTech / биржевых интерфейсах</b>, десктоп-клиентах на <b>Electron</b> и инструментах, вызываемых AI-агентами — над последним работаю прямо сейчас.">Senior Frontend Engineer with <b>7+ years</b> shipping production web and desktop apps. Deep in <b>real-time chat at scale</b> (Matrix SDK, 10k+ virtualized message threads), <b>FinTech / exchange UIs</b>, <b>Electron</b> desktop clients, and AI-agent-callable tooling I'm building right now.</p>
         <p data-ru="Бо́льшая часть опыта — чаты и финансы: протокол Matrix с нуля в Pocketnet, десктоп-клиент уровня Zoom в Alandarev, биржевые платформы в Амстердаме. В большинстве проектов — единственный фронтенд-разработчик или лид по чату; уверенно веду клиентскую часть от и до.">Most of my work has been chat and finance: Matrix protocol from scratch at Pocketnet, a Zoom-class desktop client at Alandarev, exchange platforms in Amsterdam. Sole frontend or chat lead in most of them — comfortable owning the client side end-to-end.</p>
-        <p data-ru="Сейчас строю <b>Heiks</b> — PWA для ежедневных сводок на React 18 / Vite / FastAPI с архитектурой подключаемых приложений и MCP-инструментами, чтобы AI-агенты работали с теми же интерфейсами, что и человек. 438 бэкенд-тестов / покрытие 96%. Развёрнут на dashboard.heiks.uk.">Currently building <b>Heiks</b>, a daily-briefing PWA on React 18 / Vite / FastAPI with a pluggable-apps architecture and MCP-callable tools so AI agents act on the same surfaces a human does. 438 backend tests / 96% coverage. Live at dashboard.heiks.uk.</p>
+        <p data-ru="Сейчас строю <b>Heiks</b> — PWA для ежедневных сводок на React 18 / Vite / FastAPI с архитектурой подключаемых приложений и MCP-инструментами, чтобы AI-агенты работали с теми же интерфейсами, что и человек. 438 бэкенд-тестов / покрытие 96%. Развёрнут на projects.heiks.uk.">Currently building <b>Heiks</b>, a daily-briefing PWA on React 18 / Vite / FastAPI with a pluggable-apps architecture and MCP-callable tools so AI agents act on the same surfaces a human does. 438 backend tests / 96% coverage. Live at projects.heiks.uk.</p>
       </section>
 
       <section>
@@ -224,7 +227,7 @@
 
         <div class="job">
           <div class="job-h"><div class="job-title"><span data-ru="Основатель и ведущий инженер">Founder &amp; Lead Engineer</span> — <span class="co">Heiks</span></div><div class="job-when">2024 — present</div></div>
-          <div class="job-sub" data-ru="Open-source PWA для ежедневных сводок · собственный проект · dashboard.heiks.uk">Open-source daily-briefing PWA · self-directed · live at dashboard.heiks.uk</div>
+          <div class="job-sub" data-ru="Open-source PWA для ежедневных сводок · собственный проект · projects.heiks.uk">Open-source daily-briefing PWA · self-directed · live at projects.heiks.uk</div>
           <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> React 18, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Cloudflare Tunnel</div>
           <ul class="b">
             <li data-ru="Архитектура подключаемых приложений — каждая фича это самодостаточный контейнер, объявляющий UI, REST API и MCP-инструменты; приложения подключаются и отключаются без рестарта сервера.">Pluggable apps architecture — each feature is a self-contained container declaring UI, REST API and MCP-callable tools; apps hot-mount/unmount without server restart.</li>
