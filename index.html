@@ -29,6 +29,7 @@
   .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.16)}
   .toggle{position:absolute;top:26px;right:30px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:40px;height:40px;border-radius:11px;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:.2s}
   .toggle:hover{border-color:var(--accent);color:var(--accent)}
+  #langBtn{right:78px;font-size:12.5px;font-weight:700}
 
   /* body grid */
   .grid{display:grid;grid-template-columns:270px 1fr;gap:0}
@@ -80,26 +81,56 @@
     .toggle{display:none}
     aside{background:none}
   }
+
+  /* ── modern polish (визуальный пасс) ───────────────────────────────── */
+  @keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:no-preference){
+    .sheet{animation:riseIn .55s cubic-bezier(.2,.7,.2,1) both}
+    main > section{animation:riseIn .5s cubic-bezier(.2,.7,.2,1) both}
+    main > section:nth-of-type(2){animation-delay:.06s}
+    main > section:nth-of-type(3){animation-delay:.12s}
+  }
+  .name{background:linear-gradient(92deg,var(--ink),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  header{background:radial-gradient(120% 150% at 100% -10%,var(--accent-soft),transparent 52%)}
+  h2{position:relative;padding-bottom:7px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:22px;height:2px;border-radius:2px;background:var(--accent);opacity:.55}
+  .ncard{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .ncard:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 26px rgba(79,70,229,.13)}
+  .chip{transition:border-color .15s ease,color .15s ease,transform .15s ease}
+  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .job{transition:background .2s ease;border-radius:10px}
+  .job:hover{background:var(--accent-soft)}
+  .toggle{backdrop-filter:blur(6px);transition:.2s,transform .12s ease}
+  .toggle:active{transform:scale(.92)}
+  .avail .dot{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,.16)}50%{box-shadow:0 0 0 6px rgba(34,197,94,.05)}}
+  @media print{
+    .name{-webkit-text-fill-color:initial;background:none;color:#000}
+    header,.job:hover{background:none}
+    .sheet,main > section{animation:none}
+    .avail .dot{animation:none}
+  }
 </style>
 </head>
 <body>
 <div class="sheet">
   <header>
+    <button class="toggle" id="langBtn" title="Сменить язык / Switch language" aria-label="Switch language">RU</button>
     <button class="toggle" id="themeBtn" title="Switch theme" aria-label="Switch theme">🌙</button>
     <div class="name">Igor Kim</div>
-    <div class="role">Senior Frontend Engineer · React / TypeScript</div>
+    <div class="role" data-ru="Senior Frontend-разработчик · React / TypeScript">Senior Frontend Engineer · React / TypeScript</div>
     <div class="meta">
-      <span><b>7+ years</b> · frontend &amp; full-stack</span>
-      <span>📍 Bishkek, Kyrgyzstan · UTC+6 (MSK+3)</span>
-      <span>🌐 Remote</span>
+      <span data-ru="<b>7+ лет</b> · frontend и full-stack"><b>7+ years</b> · frontend &amp; full-stack</span>
+      <span data-ru="📍 Бишкек, Кыргызстан · UTC+6 (MSK+3)">📍 Bishkek, Kyrgyzstan · UTC+6 (MSK+3)</span>
+      <span data-ru="🌐 Удалённо">🌐 Remote</span>
     </div>
-    <div class="avail"><span class="dot"></span> Available now · remote, full-time / contract</div>
+    <div class="avail"><span class="dot"></span> <span data-ru="Готов приступить · удалённо, full-time / контракт">Available now · remote, full-time / contract</span></div>
   </header>
 
   <div class="grid">
     <aside>
       <section class="contact">
-        <h2>Contact</h2>
+        <h2 data-ru="Контакты">Contact</h2>
         <a href="mailto:homeronkis@gmail.com"><b>✉</b> homeronkis@gmail.com</a>
         <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/"><b>in</b> linkedin.com/in/igor-kim</a>
         <a href="https://github.com/homeronkis"><b>⌥</b> github.com/homeronkis</a>
@@ -107,7 +138,7 @@
       </section>
 
       <section>
-        <h2>Core stack</h2>
+        <h2 data-ru="Ключевой стек">Core stack</h2>
         <div class="chips">
           <span class="chip">TypeScript</span><span class="chip">React 18</span><span class="chip">Next.js</span>
           <span class="chip">Vue 2/3</span><span class="chip">Nuxt</span><span class="chip">Electron</span>
@@ -116,40 +147,40 @@
       </section>
 
       <section>
-        <h2>Skills</h2>
-        <div class="skillgrp"><div class="t">State</div><div class="chips">
+        <h2 data-ru="Навыки">Skills</h2>
+        <div class="skillgrp"><div class="t" data-ru="Состояние">State</div><div class="chips">
           <span class="chip">Redux Toolkit</span><span class="chip">MobX-State-Tree</span><span class="chip">Zustand</span><span class="chip">TanStack Query</span><span class="chip">Vuex</span>
         </div></div>
-        <div class="skillgrp"><div class="t">Real-time / messaging</div><div class="chips">
+        <div class="skillgrp"><div class="t" data-ru="Real-time / мессенджинг">Real-time / messaging</div><div class="chips">
           <span class="chip">WebSockets</span><span class="chip">Matrix JS SDK</span><span class="chip">Olm/Megolm E2E</span><span class="chip">react-window</span><span class="chip">virtualized lists</span>
         </div></div>
-        <div class="skillgrp"><div class="t">Cross-platform</div><div class="chips">
+        <div class="skillgrp"><div class="t" data-ru="Кроссплатформенность">Cross-platform</div><div class="chips">
           <span class="chip">Electron multi-window IPC</span><span class="chip">PWA</span><span class="chip">Service Workers</span><span class="chip">Web Push (VAPID)</span>
         </div></div>
-        <div class="skillgrp"><div class="t">Styling / motion</div><div class="chips">
+        <div class="skillgrp"><div class="t" data-ru="Стили / анимация">Styling / motion</div><div class="chips">
           <span class="chip">Tailwind</span><span class="chip">SCSS/Less</span><span class="chip">styled-components</span><span class="chip">Framer Motion</span>
         </div></div>
-        <div class="skillgrp"><div class="t">Testing / build</div><div class="chips">
+        <div class="skillgrp"><div class="t" data-ru="Тестирование / сборка">Testing / build</div><div class="chips">
           <span class="chip">Jest</span><span class="chip">RTL</span><span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">Vite</span><span class="chip">Webpack</span><span class="chip">GitHub Actions</span>
         </div></div>
-        <div class="skillgrp"><div class="t">AI tooling</div><div class="chips">
+        <div class="skillgrp"><div class="t" data-ru="AI-инструменты">AI tooling</div><div class="chips">
           <span class="chip">Anthropic / Claude API</span><span class="chip">MCP servers</span><span class="chip">LLM ranking pipelines</span>
         </div></div>
       </section>
 
       <section>
-        <h2>Languages</h2>
+        <h2 data-ru="Языки">Languages</h2>
         <div class="contact">
-          <span><b>Russian</b> — native</span>
-          <span><b>English</b> — technical: reading, writing, async chat</span>
+          <span data-ru="<b>Русский</b> — родной"><b>Russian</b> — native</span>
+          <span data-ru="<b>Английский</b> — технический: чтение, письмо, async-переписка"><b>English</b> — technical: reading, writing, async chat</span>
         </div>
       </section>
 
       <section>
-        <h2>Education</h2>
+        <h2 data-ru="Образование">Education</h2>
         <div class="contact">
-          <span><b>Developer specialist · Computer Engineering</b></span>
-          <span>Polytechnic College, International University of Kyrgyzstan</span>
+          <span data-ru="<b>Специалист-разработчик · Компьютерная инженерия</b>"><b>Developer specialist · Computer Engineering</b></span>
+          <span data-ru="Политехнический колледж, Международный университет Кыргызстана">Polytechnic College, International University of Kyrgyzstan</span>
           <span>2015 — 2017</span>
         </div>
       </section>
@@ -157,117 +188,136 @@
 
     <main>
       <section class="summary">
-        <h2>Summary</h2>
-        <p>Senior Frontend Engineer with <b>7+ years</b> shipping production web and desktop apps. Deep in <b>real-time chat at scale</b> (Matrix SDK, 10k+ virtualized message threads), <b>FinTech / exchange UIs</b>, <b>Electron</b> desktop clients, and AI-agent-callable tooling I'm building right now.</p>
-        <p>Most of my work has been chat and finance: Matrix protocol from scratch at Pocketnet, a Zoom-class desktop client at Alandarev, exchange platforms in Amsterdam. Sole frontend or chat lead in most of them — comfortable owning the client side end-to-end.</p>
-        <p>Currently building <b>Heiks</b>, a daily-briefing PWA on React 18 / Vite / FastAPI with a pluggable-apps architecture and MCP-callable tools so AI agents act on the same surfaces a human does. 438 backend tests / 96% coverage. Live at dashboard.heiks.uk.</p>
+        <h2 data-ru="О себе">Summary</h2>
+        <p data-ru="Senior Frontend-разработчик, <b>7+ лет</b> вывожу в продакшн веб- и десктоп-приложения. Глубоко в <b>чатах реального времени под нагрузкой</b> (Matrix SDK, виртуализация тредов на 10k+ сообщений), <b>FinTech / биржевых интерфейсах</b>, десктоп-клиентах на <b>Electron</b> и инструментах, вызываемых AI-агентами — над последним работаю прямо сейчас.">Senior Frontend Engineer with <b>7+ years</b> shipping production web and desktop apps. Deep in <b>real-time chat at scale</b> (Matrix SDK, 10k+ virtualized message threads), <b>FinTech / exchange UIs</b>, <b>Electron</b> desktop clients, and AI-agent-callable tooling I'm building right now.</p>
+        <p data-ru="Бо́льшая часть опыта — чаты и финансы: протокол Matrix с нуля в Pocketnet, десктоп-клиент уровня Zoom в Alandarev, биржевые платформы в Амстердаме. В большинстве проектов — единственный фронтенд-разработчик или лид по чату; уверенно веду клиентскую часть от и до.">Most of my work has been chat and finance: Matrix protocol from scratch at Pocketnet, a Zoom-class desktop client at Alandarev, exchange platforms in Amsterdam. Sole frontend or chat lead in most of them — comfortable owning the client side end-to-end.</p>
+        <p data-ru="Сейчас строю <b>Heiks</b> — PWA для ежедневных сводок на React 18 / Vite / FastAPI с архитектурой подключаемых приложений и MCP-инструментами, чтобы AI-агенты работали с теми же интерфейсами, что и человек. 438 бэкенд-тестов / покрытие 96%. Развёрнут на dashboard.heiks.uk.">Currently building <b>Heiks</b>, a daily-briefing PWA on React 18 / Vite / FastAPI with a pluggable-apps architecture and MCP-callable tools so AI agents act on the same surfaces a human does. 438 backend tests / 96% coverage. Live at dashboard.heiks.uk.</p>
       </section>
 
       <section>
-        <h2>Experience</h2>
+        <h2 data-ru="Опыт">Experience</h2>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Founder &amp; Lead Engineer — <span class="co">Heiks</span></div><div class="job-when">2024 — present</div></div>
-          <div class="job-sub">Open-source daily-briefing PWA · self-directed · live at dashboard.heiks.uk</div>
-          <div class="stackline"><b>Stack:</b> React 18, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Cloudflare Tunnel</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Основатель и ведущий инженер">Founder &amp; Lead Engineer</span> — <span class="co">Heiks</span></div><div class="job-when">2024 — present</div></div>
+          <div class="job-sub" data-ru="Open-source PWA для ежедневных сводок · собственный проект · dashboard.heiks.uk">Open-source daily-briefing PWA · self-directed · live at dashboard.heiks.uk</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> React 18, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Cloudflare Tunnel</div>
           <ul class="b">
-            <li>Pluggable apps architecture — each feature is a self-contained container declaring UI, REST API and MCP-callable tools; apps hot-mount/unmount without server restart.</li>
-            <li>Vite plugin that scans apps at build time and emits a typed registry with lazy loaders — adding a feature is dropping a folder.</li>
-            <li>AI scoring pipeline (regex pre-filter → Claude via subprocess, mood-aware rules, structured-JSON contract, fallback pool).</li>
-            <li>VAPID Web Push + service worker with offline cache; diagnosed &amp; fixed a pywebpush PEM-vs-DER mismatch in production.</li>
-            <li>438 backend tests at 96% coverage, 19/19 Playwright e2e; lazy chunks cut initial bundle ~30%.</li>
+            <li data-ru="Архитектура подключаемых приложений — каждая фича это самодостаточный контейнер, объявляющий UI, REST API и MCP-инструменты; приложения подключаются и отключаются без рестарта сервера.">Pluggable apps architecture — each feature is a self-contained container declaring UI, REST API and MCP-callable tools; apps hot-mount/unmount without server restart.</li>
+            <li data-ru="Vite-плагин сканирует приложения на этапе сборки и генерирует типизированный реестр с ленивой загрузкой — добавить фичу значит просто положить папку.">Vite plugin that scans apps at build time and emits a typed registry with lazy loaders — adding a feature is dropping a folder.</li>
+            <li data-ru="AI-пайплайн оценки (regex-предфильтр → Claude через subprocess, правила с учётом настроения, контракт на структурированный JSON, пул фолбэков).">AI scoring pipeline (regex pre-filter → Claude via subprocess, mood-aware rules, structured-JSON contract, fallback pool).</li>
+            <li data-ru="VAPID Web Push + service worker с офлайн-кэшем; нашёл и починил в проде расхождение PEM-vs-DER в pywebpush.">VAPID Web Push + service worker with offline cache; diagnosed &amp; fixed a pywebpush PEM-vs-DER mismatch in production.</li>
+            <li data-ru="438 бэкенд-тестов при покрытии 96%, 19/19 Playwright e2e; ленивые чанки срезали начальный бандл на ~30%.">438 backend tests at 96% coverage, 19/19 Playwright e2e; lazy chunks cut initial bundle ~30%.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Senior Frontend Engineer — <span class="co">Alandarev</span></div><div class="job-when">2022 — 2023</div></div>
-          <div class="job-sub">Zoom-class corporate comms client · Remote</div>
-          <div class="stackline"><b>Stack:</b> React, Redux Toolkit, Electron, Jest, MongoDB, virtualized lists</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Senior Frontend-разработчик">Senior Frontend Engineer</span> — <span class="co">Alandarev</span></div><div class="job-when">2022 — 2023</div></div>
+          <div class="job-sub" data-ru="Корпоративный комм-клиент уровня Zoom · удалённо">Zoom-class corporate comms client · Remote</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> React, Redux Toolkit, Electron, Jest, MongoDB, virtualized lists</div>
           <ul class="b">
-            <li>Owned the chat module; virtualized lists handle 10k+ messages/thread with instant scroll-to-bottom and no jank on low-end machines.</li>
-            <li>Detached chat windows via Electron IPC — open a thread in its own window, drag across monitors, state synced across windows.</li>
-            <li>Attachment pipeline: upload progress, paste-from-clipboard, image preview, exponential-backoff retry on flaky network.</li>
-            <li>Read-receipt batching via Intersection Observer — one server call/second instead of one per message.</li>
+            <li data-ru="Вёл модуль чата; виртуализированные списки держат 10k+ сообщений в треде с мгновенным скроллом вниз и без лагов на слабых машинах.">Owned the chat module; virtualized lists handle 10k+ messages/thread with instant scroll-to-bottom and no jank on low-end machines.</li>
+            <li data-ru="Отдельные окна чата через Electron IPC — тред в своём окне, перетаскивание между мониторами, синхронизация состояния между окнами.">Detached chat windows via Electron IPC — open a thread in its own window, drag across monitors, state synced across windows.</li>
+            <li data-ru="Пайплайн вложений: прогресс загрузки, вставка из буфера, превью изображений, повтор с экспоненциальной задержкой при нестабильной сети.">Attachment pipeline: upload progress, paste-from-clipboard, image preview, exponential-backoff retry on flaky network.</li>
+            <li data-ru="Батчинг отметок о прочтении через Intersection Observer — один запрос в секунду вместо одного на каждое сообщение.">Read-receipt batching via Intersection Observer — one server call/second instead of one per message.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Frontend Developer, Chat Lead — <span class="co">Pocketnet</span></div><div class="job-when">2020 — 2021</div></div>
-          <div class="job-sub">Matrix-protocol chat product · Remote · live at pocketnet.app</div>
-          <div class="stackline"><b>Stack:</b> Vue.js, Matrix JS SDK, Synapse, Olm/Megolm E2E, Docker</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Frontend-разработчик, лид по чату">Frontend Developer, Chat Lead</span> — <span class="co">Pocketnet</span></div><div class="job-when">2020 — 2021</div></div>
+          <div class="job-sub" data-ru="Чат-продукт на протоколе Matrix · удалённо · pocketnet.app">Matrix-protocol chat product · Remote · live at pocketnet.app</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js, Matrix JS SDK, Synapse, Olm/Megolm E2E, Docker</div>
           <ul class="b">
-            <li>Built the entire chat product on Matrix from zero — solo for 6 months, then led a two-engineer team.</li>
-            <li>Direct &amp; group chats, contact search across thousands of users, group admin, reply threads, OpenGraph link previews.</li>
-            <li>End-to-end encryption: Olm/Megolm key verification, device cross-signing, encrypted attachments.</li>
-            <li>Single codebase serving desktop, tablet and mobile.</li>
+            <li data-ru="Построил весь чат-продукт на Matrix с нуля — полгода в одиночку, затем вёл команду из двух инженеров.">Built the entire chat product on Matrix from zero — solo for 6 months, then led a two-engineer team.</li>
+            <li data-ru="Личные и групповые чаты, поиск контактов среди тысяч пользователей, админка групп, треды ответов, OpenGraph-превью ссылок.">Direct &amp; group chats, contact search across thousands of users, group admin, reply threads, OpenGraph link previews.</li>
+            <li data-ru="Сквозное шифрование: верификация ключей Olm/Megolm, кросс-подпись устройств, шифрованные вложения.">End-to-end encryption: Olm/Megolm key verification, device cross-signing, encrypted attachments.</li>
+            <li data-ru="Единая кодовая база для десктопа, планшета и мобильных.">Single codebase serving desktop, tablet and mobile.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Frontend Developer — <span class="co">AZARA</span></div><div class="job-when">2020</div></div>
-          <div class="job-sub">FinTech / exchange platform · Amsterdam · Remote</div>
-          <div class="stackline"><b>Stack:</b> Vue.js, Nuxt, SCSS, WebSockets</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Frontend-разработчик">Frontend Developer</span> — <span class="co">AZARA</span></div><div class="job-when">2020</div></div>
+          <div class="job-sub" data-ru="FinTech / биржевая платформа · Амстердам · удалённо">FinTech / exchange platform · Amsterdam · Remote</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js, Nuxt, SCSS, WebSockets</div>
           <ul class="b">
-            <li>Exchange front-end with real-time order book over WebSocket — order forms, multi-axis history filters, live price ticks.</li>
-            <li>Owned the client side end-to-end across three surfaces: public landing, transactional demo, internal admin UI.</li>
+            <li data-ru="Фронтенд биржи с биржевым стаканом в реальном времени по WebSocket — формы ордеров, многоосевые фильтры истории, живые тики цен.">Exchange front-end with real-time order book over WebSocket — order forms, multi-axis history filters, live price ticks.</li>
+            <li data-ru="Вёл клиентскую часть целиком на трёх поверхностях: публичный лендинг, транзакционное демо, внутренняя админка.">Owned the client side end-to-end across three surfaces: public landing, transactional demo, internal admin UI.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Frontend Developer — <span class="co">BoxExchanger</span></div><div class="job-when">2019 — 2020</div></div>
-          <div class="job-sub">FinTech / exchange product · Amsterdam · Remote</div>
-          <div class="stackline"><b>Stack:</b> Vue.js, Nuxt, SCSS</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Frontend-разработчик">Frontend Developer</span> — <span class="co">BoxExchanger</span></div><div class="job-when">2019 — 2020</div></div>
+          <div class="job-sub" data-ru="FinTech / обменный продукт · Амстердам · удалённо">FinTech / exchange product · Amsterdam · Remote</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js, Nuxt, SCSS</div>
           <ul class="b">
-            <li>Sole frontend for the whole product — three apps from scratch: marketing site, trading demo, admin panel.</li>
-            <li>Multi-step validation, auth/registration flows, partners directory, search/filter across thousands of items.</li>
-            <li>Translated complex finance flows (rate calc, fee disclosure, KYC steps) into UIs that hold conversion — the team's primary KPI.</li>
+            <li data-ru="Единственный фронтендер на весь продукт — три приложения с нуля: маркетинговый сайт, торговое демо, админ-панель.">Sole frontend for the whole product — three apps from scratch: marketing site, trading demo, admin panel.</li>
+            <li data-ru="Многошаговая валидация, флоу авторизации/регистрации, каталог партнёров, поиск/фильтрация среди тысяч элементов.">Multi-step validation, auth/registration flows, partners directory, search/filter across thousands of items.</li>
+            <li data-ru="Превращал сложные финансовые флоу (расчёт курса, раскрытие комиссий, шаги KYC) в интерфейсы, удерживающие конверсию — главный KPI команды.">Translated complex finance flows (rate calc, fee disclosure, KYC steps) into UIs that hold conversion — the team's primary KPI.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Frontend Engineer, Tech Lead (MVP) — <span class="co">NEO DOC</span></div><div class="job-when">2021</div></div>
-          <div class="job-sub">Booking MVP · Bishkek · live at dev.neodoc.io</div>
-          <div class="stackline"><b>Stack:</b> Vue.js</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Frontend-инженер, тех-лид (MVP)">Frontend Engineer, Tech Lead (MVP)</span> — <span class="co">NEO DOC</span></div><div class="job-when">2021</div></div>
+          <div class="job-sub" data-ru="MVP сервиса бронирования · Бишкек · dev.neodoc.io">Booking MVP · Bishkek · live at dev.neodoc.io</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js</div>
           <ul class="b">
-            <li>Took the MVP from spec to release as the sole frontend.</li>
-            <li>Calendar / booking UI with slot availability; order forms with conditional flows and server-side validation feedback.</li>
+            <li data-ru="Довёл MVP от спецификации до релиза как единственный фронтендер.">Took the MVP from spec to release as the sole frontend.</li>
+            <li data-ru="Календарь / UI бронирования с доступностью слотов; формы заказа с условными флоу и серверной валидацией.">Calendar / booking UI with slot availability; order forms with conditional flows and server-side validation feedback.</li>
           </ul>
         </div>
 
         <div class="job">
-          <div class="job-h"><div class="job-title">Frontend Developer — <span class="co">OptDyn / Subutai</span></div><div class="job-when">2018 — 2019</div></div>
-          <div class="job-sub">Cloud / p2p platform · Delaware · Remote</div>
-          <div class="stackline"><b>Stack:</b> Angular 1.5, jQuery, DataTables, Three.js</div>
+          <div class="job-h"><div class="job-title"><span data-ru="Frontend-разработчик">Frontend Developer</span> — <span class="co">OptDyn / Subutai</span></div><div class="job-when">2018 — 2019</div></div>
+          <div class="job-sub" data-ru="Облачная / p2p-платформа · Делавэр · удалённо">Cloud / p2p platform · Delaware · Remote</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Angular 1.5, jQuery, DataTables, Three.js</div>
           <ul class="b">
-            <li>Built and shipped the Subutai.io marketing site; implemented core Bazaar product flows, refactored legacy code.</li>
-            <li>Browser extension generating PGP keys after auth; container backup/snapshot UIs rendered client-side.</li>
-            <li>Heavy data-table work and a 3D network-topology globe via Three.js.</li>
+            <li data-ru="Сделал и выпустил маркетинговый сайт Subutai.io; реализовал ключевые флоу продукта Bazaar, рефакторил легаси.">Built and shipped the Subutai.io marketing site; implemented core Bazaar product flows, refactored legacy code.</li>
+            <li data-ru="Браузерное расширение, генерирующее PGP-ключи после авторизации; клиентские UI бэкапа/снапшотов контейнеров.">Browser extension generating PGP keys after auth; container backup/snapshot UIs rendered client-side.</li>
+            <li data-ru="Плотная работа с таблицами данных и 3D-глобус топологии сети на Three.js.">Heavy data-table work and a 3D network-topology globe via Three.js.</li>
           </ul>
         </div>
       </section>
 
       <section>
-        <h2>Signature niches</h2>
+        <h2 data-ru="Профильные ниши">Signature niches</h2>
         <div class="niche">
-          <div class="ncard"><div class="nt">Real-time chat at scale</div><p>Matrix JS SDK, Olm/Megolm E2E, virtualized 10k+ message threads, batched read-receipts, clipboard attachment pipelines.</p></div>
-          <div class="ncard"><div class="nt">FinTech / exchange UIs</div><p>Real-time order books over WebSocket, multi-step validation &amp; KYC flows built to hold conversion as the primary KPI.</p></div>
-          <div class="ncard"><div class="nt">Performance</div><p>Render profiling, bundle splitting (~30% initial-bundle cut), intersection-observer lazy loading, virtualization on real-world-large data.</p></div>
-          <div class="ncard"><div class="nt">AI-aware frontends</div><p>Plugin architectures exposing UI + REST + MCP tools so a Claude/GPT agent acts on the same surfaces a human uses.</p></div>
+          <div class="ncard"><div class="nt" data-ru="Чаты реального времени под нагрузкой">Real-time chat at scale</div><p data-ru="Matrix JS SDK, Olm/Megolm E2E, виртуализация тредов на 10k+ сообщений, батчинг отметок о прочтении, пайплайны вложений из буфера.">Matrix JS SDK, Olm/Megolm E2E, virtualized 10k+ message threads, batched read-receipts, clipboard attachment pipelines.</p></div>
+          <div class="ncard"><div class="nt" data-ru="FinTech / биржевые интерфейсы">FinTech / exchange UIs</div><p data-ru="Биржевые стаканы в реальном времени по WebSocket, многошаговая валидация и KYC-флоу, заточенные под удержание конверсии как главного KPI.">Real-time order books over WebSocket, multi-step validation &amp; KYC flows built to hold conversion as the primary KPI.</p></div>
+          <div class="ncard"><div class="nt" data-ru="Производительность">Performance</div><p data-ru="Профилирование рендера, разбиение бандла (срез ~30% начального), ленивая загрузка через intersection-observer, виртуализация на реально больших данных.">Render profiling, bundle splitting (~30% initial-bundle cut), intersection-observer lazy loading, virtualization on real-world-large data.</p></div>
+          <div class="ncard"><div class="nt" data-ru="AI-осознанные фронтенды">AI-aware frontends</div><p data-ru="Плагинные архитектуры, отдающие UI + REST + MCP-инструменты, чтобы агент Claude/GPT работал с теми же интерфейсами, что и человек.">Plugin architectures exposing UI + REST + MCP tools so a Claude/GPT agent acts on the same surfaces a human uses.</p></div>
         </div>
       </section>
     </main>
   </div>
 
-  <footer>Igor Kim · Senior Frontend Engineer · homeronkis@gmail.com · Available now · remote, UTC+6 (MSK+3)</footer>
+  <footer data-ru="Igor Kim · Senior Frontend-разработчик · homeronkis@gmail.com · Готов приступить · удалённо, UTC+6 (MSK+3)">Igor Kim · Senior Frontend Engineer · homeronkis@gmail.com · Available now · remote, UTC+6 (MSK+3)</footer>
 </div>
 
 <script>
   (function(){
-    var btn = document.getElementById('themeBtn');
     var root = document.documentElement;
-    function set(t){ root.setAttribute('data-theme', t); btn.textContent = t === 'dark' ? '☀️' : '🌙'; }
-    btn.addEventListener('click', function(){
-      set(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+
+    // тема (как было)
+    var themeBtn = document.getElementById('themeBtn');
+    function setTheme(t){ root.setAttribute('data-theme', t); themeBtn.textContent = t === 'dark' ? '☀️' : '🌙'; }
+    themeBtn.addEventListener('click', function(){
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    // язык EN⇄RU на лету: английский — исходный текст элемента (снимаем в data-en),
+    // русский — в data-ru. По клику меняем innerHTML всех помеченных элементов.
+    var langBtn = document.getElementById('langBtn');
+    var nodes = document.querySelectorAll('[data-ru]');
+    nodes.forEach(function(el){ el.setAttribute('data-en', el.innerHTML); });
+    function setLang(l){
+      nodes.forEach(function(el){
+        var v = el.getAttribute('data-' + l);
+        if (v !== null) el.innerHTML = v;
+      });
+      root.setAttribute('lang', l);
+      langBtn.textContent = (l === 'ru') ? 'EN' : 'RU';
+    }
+    langBtn.addEventListener('click', function(){
+      setLang(root.getAttribute('lang') === 'ru' ? 'en' : 'ru');
     });
   })();
 </script>
