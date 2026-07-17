@@ -38,10 +38,10 @@
 
   /* body grid */
   .grid{display:grid;grid-template-columns:270px 1fr;gap:0}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}main{order:1}aside{order:2}}
   aside{padding:28px 26px;border-right:1px solid var(--line);background:linear-gradient(180deg,var(--accent-soft),transparent 240px)}
   main{padding:28px 34px}
-  @media(max-width:760px){aside{border-right:none;border-bottom:1px solid var(--line)}}
+  @media(max-width:760px){aside{border-right:none;border-top:1px solid var(--line)}}
 
   h2{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;color:var(--faint);font-weight:700;margin:0 0 12px}
   aside section{margin-bottom:24px}
@@ -229,7 +229,7 @@
         <h2 data-ru="Контакты">Contact</h2>
         <a href="mailto:homeronkis@gmail.com"><b>✉</b> homeronkis@gmail.com</a>
         <a href="https://www.linkedin.com/in/igor-kim-45a3b817a/"><b>in</b> linkedin.com/in/igor-kim</a>
-        <a href="https://github.com/homeronkis"><b>⌥</b> github.com/homeronkis</a>
+        <a href="https://github.com/homeronkis"><b>gh</b> github.com/homeronkis</a>
         <a href="https://projects.heiks.uk"><b>◆</b> projects.heiks.uk · live project</a>
       </section>
 
@@ -245,19 +245,19 @@
       <section>
         <h2 data-ru="Навыки">Skills</h2>
         <div class="skillgrp"><div class="t" data-ru="Состояние">State</div><div class="chips">
-          <span class="chip">Redux Toolkit</span><span class="chip">MobX-State-Tree</span><span class="chip">Zustand</span><span class="chip">TanStack Query</span><span class="chip">Vuex</span>
+          <span class="chip">Redux Toolkit</span><span class="chip">Zustand</span><span class="chip">TanStack Query</span>
         </div></div>
         <div class="skillgrp"><div class="t" data-ru="Real-time / мессенджинг">Real-time / messaging</div><div class="chips">
-          <span class="chip">WebSockets</span><span class="chip">Matrix JS SDK</span><span class="chip">Olm/Megolm E2E</span><span class="chip">react-window</span><span class="chip">virtualized lists</span>
+          <span class="chip">WebSockets</span><span class="chip">Matrix JS SDK</span><span class="chip">Olm/Megolm E2E</span><span class="chip">virtualized lists</span>
         </div></div>
         <div class="skillgrp"><div class="t" data-ru="Кроссплатформенность">Cross-platform</div><div class="chips">
-          <span class="chip">Electron multi-window IPC</span><span class="chip">PWA</span><span class="chip">Service Workers</span><span class="chip">Web Push (VAPID)</span>
+          <span class="chip">Electron multi-window IPC</span><span class="chip">PWA</span><span class="chip">Web Push (VAPID)</span>
         </div></div>
         <div class="skillgrp"><div class="t" data-ru="Стили / анимация">Styling / motion</div><div class="chips">
-          <span class="chip">Tailwind</span><span class="chip">SCSS/Less</span><span class="chip">styled-components</span><span class="chip">Framer Motion</span>
+          <span class="chip">Tailwind</span><span class="chip">SCSS/Less</span><span class="chip">Framer Motion</span>
         </div></div>
         <div class="skillgrp"><div class="t" data-ru="Тестирование / сборка">Testing / build</div><div class="chips">
-          <span class="chip">Jest</span><span class="chip">RTL</span><span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">Vite</span><span class="chip">Webpack</span><span class="chip">GitHub Actions</span>
+          <span class="chip">Jest</span><span class="chip">Playwright</span><span class="chip">Vite</span><span class="chip">GitHub Actions</span>
         </div></div>
         <div class="skillgrp"><div class="t" data-ru="AI-инструменты">AI tooling</div><div class="chips">
           <span class="chip">Anthropic / Claude API</span><span class="chip">MCP servers</span><span class="chip">LLM ranking pipelines</span>
@@ -319,6 +319,16 @@
         </div>
 
         <div class="job">
+          <div class="job-h"><div class="job-title"><span data-ru="Frontend-инженер, тех-лид (MVP)">Frontend Engineer, Tech Lead (MVP)</span> — <span class="co">NEO DOC</span></div><div class="job-when">2021</div></div>
+          <div class="job-sub" data-ru="MVP сервиса бронирования · Бишкек · dev.neodoc.io">Booking MVP · Bishkek · live at dev.neodoc.io</div>
+          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js</div>
+          <ul class="b">
+            <li data-ru="Довёл MVP от спецификации до релиза как единственный фронтендер.">Took the MVP from spec to release as the sole frontend.</li>
+            <li data-ru="Календарь / UI бронирования с доступностью слотов; формы заказа с условными флоу и серверной валидацией.">Calendar / booking UI with slot availability; order forms with conditional flows and server-side validation feedback.</li>
+          </ul>
+        </div>
+
+        <div class="job">
           <div class="job-h"><div class="job-title"><span data-ru="Frontend-разработчик, лид по чату">Frontend Developer, Chat Lead</span> — <span class="co">Pocketnet</span></div><div class="job-when">2020 — 2021</div></div>
           <div class="job-sub" data-ru="Чат-продукт на протоколе Matrix · удалённо · pocketnet.app">Matrix-protocol chat product · Remote · live at pocketnet.app</div>
           <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js, Matrix JS SDK, Synapse, Olm/Megolm E2E, Docker</div>
@@ -348,16 +358,6 @@
             <li data-ru="Единственный фронтендер на весь продукт — три приложения с нуля: маркетинговый сайт, торговое демо, админ-панель.">Sole frontend for the whole product: three apps from scratch (marketing site, trading demo, admin panel).</li>
             <li data-ru="Многошаговая валидация, флоу авторизации/регистрации, каталог партнёров, поиск/фильтрация среди тысяч элементов.">Multi-step validation, auth/registration flows, partners directory, search/filter across thousands of items.</li>
             <li data-ru="Превращал сложные финансовые флоу (расчёт курса, раскрытие комиссий, шаги KYC) в интерфейсы, удерживающие конверсию — главный KPI команды.">Translated complex finance flows (rate calc, fee disclosure, KYC steps) into UIs that hold conversion, the team's primary KPI.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-h"><div class="job-title"><span data-ru="Frontend-инженер, тех-лид (MVP)">Frontend Engineer, Tech Lead (MVP)</span> — <span class="co">NEO DOC</span></div><div class="job-when">2021</div></div>
-          <div class="job-sub" data-ru="MVP сервиса бронирования · Бишкек · dev.neodoc.io">Booking MVP · Bishkek · live at dev.neodoc.io</div>
-          <div class="stackline"><span data-ru="<b>Стек:</b>"><b>Stack:</b></span> Vue.js</div>
-          <ul class="b">
-            <li data-ru="Довёл MVP от спецификации до релиза как единственный фронтендер.">Took the MVP from spec to release as the sole frontend.</li>
-            <li data-ru="Календарь / UI бронирования с доступностью слотов; формы заказа с условными флоу и серверной валидацией.">Calendar / booking UI with slot availability; order forms with conditional flows and server-side validation feedback.</li>
           </ul>
         </div>
 
