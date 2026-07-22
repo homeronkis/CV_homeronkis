@@ -24,7 +24,7 @@ as the only person who owns the client side end to end.
 Currently running a personal production dashboard on React 19 / Vite / FastAPI: 46 pluggable
 apps, a built-in MCP server with 32 tools an AI agent drives the same way a person does, and a
 multi-provider LLM fallback chain. 998 backend tests, an 80-check Playwright e2e suite, CI.
-Public read-only demo: demo.heiks.uk.
+Public read-only demo: https://demo.heiks.uk
 
 ---
 
@@ -60,7 +60,7 @@ Public read-only demo: demo.heiks.uk.
 
 ### Heiks — personal production AI dashboard · 2024 to present
 
-**Founder & lead engineer · Public demo: demo.heiks.uk**
+**Founder & lead engineer · Public demo: https://demo.heiks.uk**
 
 **Stack:** React 19, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Vitest, Cloudflare Tunnel.
 
