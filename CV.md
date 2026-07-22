@@ -1,6 +1,6 @@
 # Igor Kim — Senior Frontend Engineer
 
-**Stack:** TypeScript, React 18, Next.js, Vue.js, Nuxt, Electron, Node.js
+**Stack:** TypeScript, React 19, Next.js, Vue.js, Nuxt, Electron, Node.js
 **Niches:** real-time chat, virtualized lists, FinTech / crypto exchange UIs, AI-driven personal tooling
 **Location:** Bishkek, Kyrgyzstan · UTC+6 (MSK+3) · remote
 **Email:** homeronkis@gmail.com
@@ -21,11 +21,10 @@ Pocketnet, virtualized 10k+ message threads in a Zoom-class desktop client at Al
 exchanges in Amsterdam. On most of these I was the sole frontend or the chat lead. I work best
 as the only person who owns the client side end to end.
 
-Currently building a daily-briefing PWA on React 18 / Vite / FastAPI. Each feature is a pluggable
-app that declares its own surfaces and MCP-callable tools, so an AI agent can act on it the same
-way a person does. Apps mount and unmount live, with schema-versioned permissions. 438 backend
-tests, 96% coverage.
-Source on GitHub, live at dashboard.heiks.uk.
+Currently running a personal production dashboard on React 19 / Vite / FastAPI: 46 pluggable
+apps, a built-in MCP server with 32 tools an AI agent drives the same way a person does, and a
+multi-provider LLM fallback chain. 998 backend tests, an 80-check Playwright e2e suite, CI.
+Public read-only demo: demo.heiks.uk.
 
 ---
 
@@ -33,7 +32,7 @@ Source on GitHub, live at dashboard.heiks.uk.
 
 **Languages:** TypeScript (daily), JavaScript (ES6+), HTML5, CSS3, Python (FastAPI / pydantic for tooling).
 
-**Frameworks:** React 18 (concurrent, Suspense, hooks-deep), Next.js, Vue 2/3, Nuxt, Electron.
+**Frameworks:** React 19 (concurrent, Suspense, hooks-deep), Next.js, Vue 2/3, Nuxt, Electron.
 
 **State management:** Redux Toolkit, MobX-State-Tree, Zustand, TanStack Query (React Query), Vuex.
 
@@ -49,7 +48,7 @@ Source on GitHub, live at dashboard.heiks.uk.
 
 **Adjacent:** Node.js for full-stack, FastAPI / Python for personal tooling, Docker, basic blockchain & E2E encryption.
 
-**AI tooling experience:** integrating Claude / Anthropic API via subprocess, prompt design for ranking pipelines, MCP server contracts, mood-aware filter rules.
+**AI tooling experience:** built and run an MCP server (32 tools over JSON-RPC 2.0, driven from Claude Desktop / Cursor), multi-provider LLM fallback chains (Claude CLI, GLM, local Ollama) with graceful degradation and subprocess context isolation, prompt design for ranking and generation pipelines.
 
 **Methodology:** Scrum, Agile, async-friendly remote teams.
 
@@ -59,19 +58,19 @@ Source on GitHub, live at dashboard.heiks.uk.
 
 ## Experience
 
-### Heiks — daily-briefing PWA · 2024 to present
+### Heiks — personal production AI dashboard · 2024 to present
 
-**Founder & lead engineer · open-source · Live at dashboard.heiks.uk**
+**Founder & lead engineer · Public demo: demo.heiks.uk**
 
-**Stack:** React 18, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Vitest, Cloudflare Tunnel.
+**Stack:** React 19, TypeScript, Vite, TanStack Query, Framer Motion, FastAPI, Pydantic, Playwright, Vitest, Cloudflare Tunnel.
 
-- Pluggable apps architecture: each feature is a self-contained `apps/{slug}/` container whose manifest.json declares three surfaces (UI, REST API, MCP-callable tools), its data scope, and a whitelist of permissions. Apps hot-mount/unmount on toggle without a server restart.
-- Built a Vite plugin that scans `apps/` at build time and emits a typed registry with lazy import loaders. Adding a feature is dropping a folder.
-- AI scoring pipeline for incoming jobs and news. A regex pre-filter runs first, then Claude Haiku ranks candidates over a subprocess against a structured-JSON contract. Mood-aware rules shape the result, and a fallback pool covers the LLM being unavailable.
+- Pluggable apps architecture, 46 apps at last count: each feature is a self-contained `apps/{slug}/` container whose manifest.json declares three surfaces (UI, REST API, MCP-callable tools), its data scope, and a whitelist of permissions. Adding a feature is dropping a folder; no core wiring.
+- Built-in MCP server: 32 tools across 15 apps served from one JSON-RPC 2.0 endpoint. Claude Desktop or Cursor read and write real dashboard data; the endpoint is owner-gated.
+- Multi-provider LLM reliability layer: an ordered fallback chain (Claude CLI, then GLM via z.ai, then local Ollama) with graceful degradation, plus subprocess context isolation so coding-session instructions can never bleed into app generations. Jobs/news scoring runs a regex pre-filter, then an LLM ranks candidates against a structured-JSON contract.
+- Fail-closed authorization: a single middleware gates every `/api/*` route off a Cloudflare Access-verified identity, so a new route cannot accidentally ship public. A separate read-only demo host pins a non-owner viewer, curates an app allowlist, forces free LLM backends and rate-limits per IP.
 - VAPID Web Push + service worker with offline cache and background pipeline-completion notifier. Diagnosed and shipped a fix for a pywebpush 2.x ↔ py_vapid PEM-vs-DER mismatch in production.
 - Cloudflare Tunnel + Cloudflare Access (Google OAuth) for zero-port-forward delivery on a residential connection.
-- Test discipline: 438 backend tests at 96% line coverage (every module ≥90%), 26 Vitest unit, 19/19 Playwright e2e. Lazy chunks for non-landing pages cut initial bundle ~30%.
-- Source: https://github.com/homeronkis.
+- Test discipline: 998 backend tests running in ~20s, 47 Vitest unit tests, an 80-check Playwright e2e smoke, CI with lint + typecheck + build + tests. Every bugfix lands test-first. Lazy chunks for non-landing pages cut initial bundle ~30%.
 
 ### Alandarev — Redux External — Mar 2022 to Aug 2023 · 1 y 5 m
 
